@@ -2,6 +2,7 @@ package com.basics;
 
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class Demo extends Computer{
 
 	public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Demo extends Computer{
 //		System.out.println(add);
 		Computer comp = new Computer();
 //		System.out.println("Enter Money");
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
 //		int money = sc.nextInt();
 //		comp.getMePen(money);	
 		comp.getMePen(comp.Add(3,3 ));
