@@ -2,6 +2,8 @@ package com.Junit5Demos;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
 
 class SquareOfNumTest2 {
@@ -11,6 +13,12 @@ class SquareOfNumTest2 {
 //		fail("Not yet implemented");
 		SquareOfNum sq= new SquareOfNum();
 		assertEquals(6, sq.sum(3, 3));
+	}
+	@Test
+	@RepeatedTest(value = 4)
+	void test1() {
+//		RepetitionInfo r1 = null;
+		System.out.println("Test method ");
 	}
 
 }

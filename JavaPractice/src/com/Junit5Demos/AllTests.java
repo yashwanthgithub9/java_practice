@@ -8,3 +8,4 @@ import org.junit.platform.suite.api.Suite;
 public class AllTests {
 
 }
+ // Add Test class names in the above list to include it in test suit.
