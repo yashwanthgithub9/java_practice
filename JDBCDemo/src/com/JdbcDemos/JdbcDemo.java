@@ -25,7 +25,7 @@ public class JdbcDemo {
 //		gu.update("insert into matches values(\"RR\",\"2024-08-10\",\"SRH\")");	
 //		gu.update("insert into matches values(\"+home+\",\"+d+","+opp+")");
 //		gq.query("select * from matches");
-		gu.update("insert into matches values(?,?,?)");
+//		gu.update("insert into matches values(?,?,?)");
 		gq.query("select * from matches");
 
 	}
