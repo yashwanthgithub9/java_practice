@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,10 +37,18 @@ public class FirstServlet extends HttpServlet {
 		
 		
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("t1", request.getParameter("t1"));//setAttribte with get Paramreter
-		response.sendRedirect("Counter");//It will redirect client to second servlet
+//		HttpSession session = request.getSession();
+//		session.setAttribute("t1", request.getParameter("t1"));//setAttribte with get Paramreter
+//		response.sendRedirect("Counter");//It will redirect client to second servlet
 		//Title of Webpage will be Second servlet observe changes
+		
+		
+//		Cookie cookie = new Cookie("t1", request.getParameter("t1"));
+//		response.addCookie(cookie);
+//		response.sendRedirect("Counter"); //this is mandatory to call second servlet
+			
+		//URL Rewriting
+		response.sendRedirect("Counter?t1="+request.getParameter("t1"));
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

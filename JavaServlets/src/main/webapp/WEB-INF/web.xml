@@ -9,4 +9,17 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+  		<servlet-name>abc</servlet-name>
+  		<servlet-class>com.javaservlets.DemoServlet.java</servlet-class>
+  		<init-param>
+			<param-name>name</param-name>
+			<param-value>Yashwanth Reddy</param-value>
+  		</init-param>
+  </servlet>
+  <context-param>
+  		<param-name>name</param-name>
+  		<param-value>Yashwanth</param-value>
+  </context-param>
+  
 </web-app>

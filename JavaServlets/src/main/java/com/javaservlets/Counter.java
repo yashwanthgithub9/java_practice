@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,11 +51,28 @@ public class Counter extends HttpServlet {
 	
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		HttpSession session = request.getSession();
-		String str =(String) session.getAttribute("t1");
+//		
+//		Using HttpSession
+		
+//		HttpSession session = request.getSession();
+//		String str =(String) session.getAttribute("t1"); // getAttribute gives object, either cast is or us toString() method
 		//getAttribute from Firstservlet an store in the string
+		
+		//Using Cookie Session management
+//		String str=null;
+//		Cookie	cookies[]=request.getCookies();
+//		for (Cookie cookie : cookies) {
+//			if (cookie.getName().equals("t1")) {
+//				str=cookie.getValue() +", from Cookies we "; //call from 1st servlet is mandatory so that entered value is taken
+//			}
+//		}
+		//URL Rewriting
+		String str = request.getParameter("t1"); //this will fetch null because getParameter searches for t1 from respective html
+		//in sample.html only FirstServlet is defined.
+		//we'll add this in url of second servlet from FirstServlet call.
+		
 		PrintWriter out= response.getWriter();
-		out.println("Hi "+str+" Welcome to Counter Servlet for "+i+" number of times");
+		out.println("Hi "+str+" welcome to Counter Servlet for "+i+" number of times");
 //		out.print(i);
 		i++;
 	}
