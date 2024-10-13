@@ -5,12 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>Welcome</title>
 </head>
 <body>
 <%
-	if(session.getAttribute("username")==null){
-		response.sendRedirect("login.jsp");
+	response.setHeader("Cache-Control","no-cache");
+	response.setHeader("Cache-Control","no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
+	if(session.getAttribute("username")==null){ // check for empty username
+		response.sendRedirect("login.jsp"); // sends response to Login page
 	}
 
 %>
@@ -19,6 +23,10 @@ welcome.jsp welcomes you to the landing page...
 <br />
 Access Videos from below hyperlink<br />
 <a href="Videos.jsp">Videos</a>
+
+<form action="Logout">
+	<input type="submit" value="Logout"/>
+</form>
 
 </body>
 </html>

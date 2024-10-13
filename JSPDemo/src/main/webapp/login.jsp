@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>Login Page</title>
 </head>
 <body>
-	<form action="LoginPage">
+	<form action="LoginPage" method="post">
 		Enter USername : <input type="text" name="uname"/><br /> <br />
 		Enter Password : <input type="password" name="pass"/><br /><br />
 		<input type="submit" value="Login"/><br />
