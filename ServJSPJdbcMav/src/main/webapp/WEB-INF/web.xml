@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>validateAid</filter-name>
+  	<display-name>validateAid</display-name>
+  	<description></description>
+  	<filter-class>com.jspmaven.validateAid</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>validateAid</filter-name>
+  	<url-pattern>/getAlien</url-pattern>
+  </filter-mapping>
   <servlet>
   	<servlet-name>GetAlienController</servlet-name>
   	<display-name>GetAlienController</display-name>
