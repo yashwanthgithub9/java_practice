@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jspmaven.model.Alien;
 import com.jspmaven.model.AlienDAO;
 
-/**
- * Servlet implementation class GetAlienController
- */
+
 public class GetAlienController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -26,7 +24,7 @@ public class GetAlienController extends HttpServlet {
 		Alien a1= dao.GetAlien(aid); //Alien class will get values from DAO 
 		System.out.println(dao.GetAlien(aid));
 		request.setAttribute("aliens", a1); // Passing a1 as an attribute with name "aliens"
-		// carefull with name we give here, in showAien.jsp it showed null because "alien" was given
+		// careful with name we give here, in showAien.jsp it showed null because "alien" was given
 		
 		RequestDispatcher rd = request.getRequestDispatcher("showAlien.jsp");
 		rd.forward(request, response);

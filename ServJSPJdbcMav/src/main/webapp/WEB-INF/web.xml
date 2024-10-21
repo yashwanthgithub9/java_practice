@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>com.jspmaven.GetAlienController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SetAlienController</servlet-name>
+  	<display-name>SetAlienController</display-name>
+  	<description></description>
+  	<servlet-class>com.jspmaven.SetAlienController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>GetAlienController</servlet-name>
   	<url-pattern>/getAlien</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SetAlienController</servlet-name>
+  	<url-pattern>/setAlien</url-pattern>
   </servlet-mapping>
 </web-app>
