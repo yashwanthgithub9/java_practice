@@ -1,0 +1,136 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.5.47-log MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use login
+ERROR 1049 (42000): Unknown database 'login'
+mysql> create database loginpage
+    -> ;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use loginpage;
+Database changed
+mysql> create table creds(uname vachar(20), pass varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vachar(20), pass varchar(20))' at line 1
+mysql> create table creds(uname varchar(20), pass varchar(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from creds;
+Empty set (0.00 sec)
+
+mysql> insert into creds values("Yashwanth","Yashwanth");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from creds;
++-----------+-----------+
+| uname     | pass      |
++-----------+-----------+
+| Yashwanth | Yashwanth |
++-----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> insert into creds values("reddy","reddy");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into creds values("purra","purra");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into creds values("login","login");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from creds;
++-----------+-----------+
+| uname     | pass      |
++-----------+-----------+
+| Yashwanth | Yashwanth |
+| reddy     | reddy     |
+| purra     | purra     |
+| login     | login     |
++-----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from creds;
++-----------+-----------+
+| uname     | pass      |
++-----------+-----------+
+| Yashwanth | Yashwanth |
+| reddy     | reddy     |
+| purra     | purra     |
+| login     | login     |
++-----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from creds;
++-----------+-----------+
+| uname     | pass      |
++-----------+-----------+
+| Yashwanth | Yashwanth |
+| reddy     | reddy     |
+| purra     | purra     |
+| login     | login     |
++-----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from creds where uname=reddy, pass=reddy;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' pass=reddy' at line 1
+mysql> select * from creds where uname="reddy", pass="reddy";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' pass="reddy"' at line 1
+mysql> select * from creds where uname="reddy"andpass="reddy";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'andpass="reddy"' at line 1
+mysql> select * from creds where uname="reddy" and pass="reddy";
++-------+-------+
+| uname | pass  |
++-------+-------+
+| reddy | reddy |
++-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from creds where uname="reddy" and pass="reddy";
+ERROR 1146 (42S02): Table 'loginpage.creds' doesn't exist
+mysql> create database yash;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use database yash;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use yash;
+Database changed
+mysql> create table login(cred1 varchar(20), cred2 varchar(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from login
+    -> ;
+Empty set (0.00 sec)
+
+mysql> insert into login values("Yash","987");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from login;
++-------+-------+
+| cred1 | cred2 |
++-------+-------+
+| Yash  | 987   |
++-------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into login values("reddy","987");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from login;
++-------+-------+
+| cred1 | cred2 |
++-------+-------+
+| Yash  | 987   |
+| reddy | 987   |
++-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> ^S

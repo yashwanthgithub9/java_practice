@@ -9,8 +9,8 @@
 </head>
 <body>
 	<form action="LoginPage" method="post">
-		Enter USername : <input type="text" name="uname"/><br /> <br />
-		Enter Password : <input type="password" name="pass"/><br /><br />
+		Enter USername : <input type="text" name="unamelogin"/><br /> <br />
+		Enter Password : <input type="password" name="passlogin"/><br /><br />
 		<input type="submit" value="Login"/><br />
 	
 	</form>
