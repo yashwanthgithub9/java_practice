@@ -1,13 +1,20 @@
 package com.maven.hibernate.HibernateDemo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
+@Table(name = "Employee Table1") //to change name of the table, default table name will be entity name
+//default entity name will be Class name
 public class Employee {
-	@Id
+	@Id // declared as primary key
 	private int empid;
+	@Transient // will not be persisted or not stored in table
 	private String name;
+	@Column(name = "Role Column")
 	private String role;
 	public int getEmpid() {
 		return empid;
