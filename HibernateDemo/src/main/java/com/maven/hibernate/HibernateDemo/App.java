@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
 
 /**
@@ -18,7 +17,7 @@ public class App
     {
         Employee emp = new Employee();
         emp.setEmpid(18);
-        emp.setName("Virat Kohli");
+        emp.setName("Virat");
         emp.setRole("Manager");
         
         try {
@@ -28,6 +27,8 @@ public class App
 			Transaction tx= session.beginTransaction();
 			session.save(emp);
 			tx.commit();
+			Employee Emp1=session.get(Employee.class, 45);
+			System.out.println(Emp1);
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();

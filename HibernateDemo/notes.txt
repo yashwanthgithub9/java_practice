@@ -1,0 +1,96 @@
+Hibernate is a popular implementation of the Java Persistence API (JPA) and uses annotations to define the mapping between Java classes and database tables. Here are some of the most commonly used annotations in Hibernate:
+
+### 1. **@Entity**
+   - Marks a class as an entity that will be mapped to a database table.
+
+### 2. **@Table**
+   - Specifies the name of the database table to which the entity is mapped. This annotation can also define additional attributes, such as unique constraints.
+
+   ```java
+   @Entity
+   @Table(name = "users")
+   public class User { ... }
+   ```
+
+### 3. **@Id**
+   - Indicates the primary key of the entity.
+
+   ```java
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
+   ```
+
+### 4. **@GeneratedValue**
+   - Specifies how the primary key should be generated. Common strategies include:
+   - `IDENTITY`: Database generates the key.
+   - `SEQUENCE`: Uses a database sequence.
+   - `TABLE`: Uses a table to generate keys.
+
+### 5. **@Column**
+   - Maps a field to a database column. It can specify attributes like `name`, `nullable`, `unique`, and `length`.
+
+   ```java
+   @Column(name = "username", nullable = false, unique = true)
+   private String username;
+   ```
+
+### 6. **@ManyToOne, @OneToMany, @OneToOne, @ManyToMany**
+   - These annotations define relationships between entities:
+   - `@ManyToOne`: Many instances of this entity relate to one instance of another.
+   - `@OneToMany`: One instance of this entity relates to many instances of another.
+   - `@OneToOne`: A one-to-one relationship.
+   - `@ManyToMany`: A many-to-many relationship.
+
+   ```java
+   @ManyToOne
+   @JoinColumn(name = "role_id")
+   private Role role;
+   ```
+
+### 7. **@JoinColumn**
+   - Specifies the foreign key column for a relationship.
+
+### 8. **@Transient**
+   - Indicates that a field should not be persisted in the database.
+
+   ```java
+   @Transient
+   private String tempField;
+   ```
+
+### 9. **@Embeddable and @Embedded**
+   - Used for composite types. `@Embeddable` marks a class that can be embedded in an entity, and `@Embedded` is used in the entity class to include the embeddable class.
+
+   ```java
+   @Embeddable
+   public class Address { ... }
+
+   @Embedded
+   private Address address;
+   ```
+
+### 10. **@Version**
+   - Used for optimistic locking. This annotation marks a field to be used for versioning to prevent concurrent updates.
+
+   ```java
+   @Version
+   private int version;
+   ```
+
+### 11. **@OrderBy**
+   - Defines the order in which a collection is sorted when it is retrieved.
+
+   ```java
+   @OneToMany(mappedBy = "user")
+   @OrderBy("createdDate DESC")
+   private List<Post> posts;
+   ```
+
+### 12. **@Fetch**
+   - Configures how associated entities are fetched. It can be used to specify fetch strategies like `FetchType.EAGER` or `FetchType.LAZY`.
+
+### 13. **@Cascade**
+   - Specifies the cascade behavior for entity operations. It determines how operations (like persist, merge, remove) propagate from parent to child entities.
+
+These annotations help simplify the mapping of Java classes to database tables, making it easier to work with relational data in an object-oriented way.

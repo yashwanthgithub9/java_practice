@@ -7,13 +7,17 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "Employee Table1") //to change name of the table, default table name will be entity name
+@Table(name = "EmpTable") //to change name of the table, default table name will be entity name
 //default entity name will be Class name
 public class Employee {
 	@Id // declared as primary key
 	private int empid;
-	@Transient // will not be persisted or not stored in table
+	// will not be persisted or not stored in table
 	private String name;
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", name=" + name + ", role=" + role + "]";
+	}
 	@Column(name = "Role Column")
 	private String role;
 	public int getEmpid() {
