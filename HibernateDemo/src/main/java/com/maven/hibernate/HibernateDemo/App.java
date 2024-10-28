@@ -15,9 +15,15 @@ public class App
 {
     public static void main( String[] args )
     {
+    	EmpName en = new EmpName();
+    	en.setFname("Yashwanth");
+    	en.setMname("Reddy");
+    	en.setLname("Purra");
+    	
         Employee emp = new Employee();
         emp.setEmpid(18);
-        emp.setName("Virat");
+//        emp.setName("Virat");
+        emp.setName(en);
         emp.setRole("Manager");
         
         try {

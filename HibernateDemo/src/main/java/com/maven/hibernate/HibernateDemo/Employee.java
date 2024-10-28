@@ -13,7 +13,7 @@ public class Employee {
 	@Id // declared as primary key
 	private int empid;
 	// will not be persisted or not stored in table
-	private String name;
+	private EmpName name;
 	@Override
 	public String toString() {
 		return "Employee [empid=" + empid + ", name=" + name + ", role=" + role + "]";
@@ -26,10 +26,10 @@ public class Employee {
 	public void setEmpid(int empid) {
 		this.empid = empid;
 	}
-	public String getName() {
+	public EmpName getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(EmpName name) {
 		this.name = name;
 	}
 	public String getRole() {
