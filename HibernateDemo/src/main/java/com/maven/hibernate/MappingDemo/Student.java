@@ -1,5 +1,8 @@
 package com.maven.hibernate.MappingDemo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -15,19 +18,29 @@ public class Student {
 	private int sroll;
 	private String sname;
 	private int smarks;
-	@OneToOne
-	private Laptop lap; // mapping one Laptop into student, primary key of Laptop which is lid, will be created in Student table
+//	@OneToOne
+//	private Laptop lap; // mapping one Laptop into student, primary key of Laptop which is lid, will be created in Student table
+	
+	@OneToMany(mappedBy = "student")
+	private List<Laptop> laptops = new ArrayList<>();
 	
 	
+//	public Laptop getLap() { //One to One mapping 
+//		return lap;
+//	}
+//	public void setLap(Laptop lap) { //One to one mapping
+//		this.lap = lap;
+//	}
 	
-	public Laptop getLap() {
-		return lap;
-	}
-	public void setLap(Laptop lap) {
-		this.lap = lap;
-	}
+	
 	public int getSroll() {
 		return sroll;
+	}
+	public List<Laptop> getLaptops() {
+		return laptops;
+	}
+	public void setLaptops(List<Laptop> laptops) {
+		this.laptops = laptops;
 	}
 	public void setSroll(int sroll) {
 		this.sroll = sroll;

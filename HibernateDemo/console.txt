@@ -44,3 +44,19 @@ Hibernate: create table EmpTable (empid integer not null, `Role Column` varchar(
 Hibernate: /* insert for com.maven.hibernate.HibernateDemo.Employee */insert into EmpTable (fname,lname,mname,`Role Column`,empid) values (?,?,?,?,?)
 Hibernate: select e1_0.empid,e1_0.fname,e1_0.lname,e1_0.mname,e1_0.`Role Column` from EmpTable e1_0 where e1_0.empid=?
 null
+
+
+
+Hibernate: create table Student (smarks integer not null, sroll integer not null, sname varchar(255), primary key (sroll)) engine=InnoDB
+Hibernate: create table Student_Laptop (Student_sroll integer not null, laptops_lid integer not null) engine=InnoDB
+Hibernate: alter table Student_Laptop add constraint UKnd0qpq6dlrh10dj2xedpw4y3u unique (laptops_lid)
+Hibernate: alter table Laptop add constraint FKsmbtoylkoijvan98m0hwjpcqo foreign key (student_sroll) references Student (sroll)
+Hibernate: alter table Student_Laptop add constraint FK5ulf13wcg6tv7xnm30hm44kfo foreign key (laptops_lid) references Laptop (lid)
+Hibernate: alter table Student_Laptop add constraint FK8jtbe2pp1uf1xcehm1jgendq foreign key (Student_sroll) references Student (sroll)
+Hibernate: insert into Laptop (lname,student_sroll,lid) values (?,?,?) -->Laptop knows about student
+Hibernate: insert into Student (smarks,sname,sroll) values (?,?,?)
+Hibernate: insert into Student_Laptop (Student_sroll,laptops_lid) values (?,?)
+
+// after adding mappedBy="student", extra table is not created as mapping table
+Hibernate: insert into Laptop (lname,student_sroll,lid) values (?,?,?)
+Hibernate: insert into Student (smarks,sname,sroll) values (?,?,?)

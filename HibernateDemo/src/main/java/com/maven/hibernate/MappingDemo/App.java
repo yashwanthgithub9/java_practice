@@ -14,13 +14,19 @@ public class App {
 		// TODO Auto-generated method stub
 		
 		Laptop l1 = new Laptop();
-		Student s1= new Student();
 		l1.setLid(101);
 		l1.setLname("Dell");
+		
+		Laptop l2=new Laptop();
+		l2.setLid(102);
+		l2.setLname("Hp");
+
+		Student s1= new Student();
 		s1.setSroll(1);
 		s1.setSname("Yash");
 		s1.setSmarks(98);
-		s1.setLap(l1);
+		s1.getLaptops().add(l1);
+//		s1.getLaptops().add(l2);
 		
 		System.out.println(l1);System.out.println(s1);
 		
