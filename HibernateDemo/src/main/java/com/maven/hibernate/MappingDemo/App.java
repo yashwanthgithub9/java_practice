@@ -17,6 +17,7 @@ public class App {
 		l1.setLid(101);
 		l1.setLname("Dell");
 		
+		
 		Laptop l2=new Laptop();
 		l2.setLid(102);
 		l2.setLname("Hp");
@@ -27,7 +28,7 @@ public class App {
 		s1.setSmarks(98);
 		s1.getLaptops().add(l1);
 //		s1.getLaptops().add(l2);
-		
+		l1.getStudent().add(s1);
 		System.out.println(l1);System.out.println(s1);
 		
 		

@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -21,7 +22,8 @@ public class Student {
 //	@OneToOne
 //	private Laptop lap; // mapping one Laptop into student, primary key of Laptop which is lid, will be created in Student table
 	
-	@OneToMany(mappedBy = "student")
+//	@OneToMany(mappedBy = "student")
+	@ManyToMany(mappedBy = "student")
 	private List<Laptop> laptops = new ArrayList<>();
 	
 	
