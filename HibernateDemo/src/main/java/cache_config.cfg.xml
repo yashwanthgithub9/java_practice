@@ -12,5 +12,6 @@
   <property name="hibernate.order_inserts">true</property>
   <property name="hibernate.order_updates">true</property>
   <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.cache.use_second_level_cache">true</property>
  </session-factory>
 </hibernate-configuration>
