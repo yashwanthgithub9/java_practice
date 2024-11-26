@@ -26,9 +26,9 @@ public class App {
 //		session.save(cricketer1);
 //		session.save(cricketer31);
 //		session.save(cricketer1);
-		Cricketer c= (Cricketer)session.get(Cricketer.class, "Kane"); //session will give object of Object //Call went to DB as 
+		Cricketer c1= (Cricketer)session.get(Cricketer.class, "Kane"); //session will give object of Object //Call went to DB as 
 																		//first level is not there, now DB creates First level cache
-		System.out.println(c);
+		System.out.println(c1);
 		Cricketer c1= (Cricketer)session.get(Cricketer.class, "Kane"); //session will give object of Object
 																	//Call goes to first level cache as first level cache is created in above step
 		System.out.println(c1);
@@ -37,9 +37,9 @@ public class App {
 		
 		Session session2 = sf.openSession();
 		Transaction transaction = session2.beginTransaction();
-		Cricketer c2=(Cricketer)session2.get(Cricketer.class, "kane");// Same object is called for 3d time but this time session is different 
+		Cricketer c1=(Cricketer)session2.get(Cricketer.class, "kane");// Same object is called for 3d time but this time session is different 
 																	// so First level cache is created for session 2 and 2 time DB is being hit
-		System.out.println(c2);
+		System.out.println(c1);
 		session2.getTransaction().commit();
 		session2.close();
 		
