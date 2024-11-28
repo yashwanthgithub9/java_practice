@@ -1,11 +1,19 @@
 package com.maven.hibernate.RestDemo;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 //worked using javax.ws.rs.* instead of jakarta.ws.rs.* 
 
 /**
  * Root resource (exposed at "myresource" path)
+ * 
  */
-@javax.ws.rs.Path("myresource")
+
+
+@Path("myresource")
 public class MyResource {
 
     /**
@@ -14,8 +22,8 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @javax.ws.rs.GET
-    @javax.ws.rs.Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN)
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
     }
