@@ -1,9 +1,9 @@
 package com.maven.hibernate.RestDemo;
 
-//import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 //
-////
-//@XmlRootElement
+@XmlRootElement
 public class Alien {
 	
 	private String name;
