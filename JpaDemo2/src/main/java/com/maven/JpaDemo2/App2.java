@@ -12,8 +12,8 @@ public class App2 {
         System.out.println("Hello World!");
         
         Studentinfo studentinfo = new Studentinfo();
-        studentinfo.setName("Bumrah");
-        studentinfo.setRoll(4);
+        studentinfo.setName("Hardik");
+//        studentinfo.setRoll(4);
         studentinfo.setMarks(50);
         
         System.out.println(studentinfo);
@@ -27,7 +27,7 @@ public class App2 {
         entityManager.getTransaction().begin();
         entityManager.persist(studentinfo); // this will just persist the info, inorder to save to DB we have to begin txn and commit it
         entityManager.getTransaction().commit();
-        System.out.println(entityManager.find(Studentinfo.class, 4));
+        System.out.println(entityManager.find(Studentinfo.class, 5));
         
       // now the value is save to DB
         
