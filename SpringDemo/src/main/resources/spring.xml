@@ -9,5 +9,12 @@
     <bean id="dev" class="com.spring.SpringDemo.Dev">
 
     </bean>
+    
+    <bean id="dev2" class="com.spring.SpringDemo.Dev">
+
+    </bean>
+    <bean id="laptop" class="com.spring.SpringDemo.Laptop">
+
+    </bean>
 
 </beans>
