@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component // Now Desktop is also a component so spring will have ambiguity
-@Primary
+//@Primary
 public class Desktop implements Computer{
 
 	@Override

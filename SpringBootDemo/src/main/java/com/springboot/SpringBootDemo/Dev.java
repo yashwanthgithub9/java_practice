@@ -1,6 +1,7 @@
 package com.springboot.SpringBootDemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,6 +9,7 @@ public class Dev {
 	
 	@Autowired //Field Injection
 	// Searches byType "Laptop" and connects it using autowired
+	@Qualifier("laptop") // this will give priority to Laptop class
 	private Computer comp; // Now we are using reference of Computer
 	
 //	//below is Constructor injection where @Autowired annotation is not needed
