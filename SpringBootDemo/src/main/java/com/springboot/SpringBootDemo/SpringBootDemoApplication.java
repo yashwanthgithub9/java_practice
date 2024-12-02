@@ -25,7 +25,7 @@ public class SpringBootDemoApplication {
 		Dev dev = applicationContext.getBean(Dev.class);//Error: Could not find or load main class com.springboot.SpringBootDemo.SpringBootDemoApplication
 		//Caused by: java.lang.ClassNotFoundException: com.springboot.SpringBootDemo.SpringBootDemoApplication
 		// To solve the above error we have to declare the required class as Component, so that Spring will tc of class and objects
-		dev.buid();
+		dev.buid();// pushed existing code to git and tried re importing, this worked to solve CNF exception
 	}
 
 }
