@@ -6,9 +6,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Dev {
 	
-//	@Autowired //Field Injection
+	@Autowired //Field Injection
 	// Searches byType "Laptop" and connects it using autowired
-	private Laptop laptop;
+	private Computer comp; // Now we are using reference of Computer
+	
 //	//below is Constructor injection where @Autowired annotation is not needed
 //	public Dev(Laptop laptop) {
 //		this.laptop=laptop;
@@ -18,15 +19,15 @@ public class Dev {
 	
 	public void buid()
 	{
-		laptop.compile();
+		comp.compile();
 		System.out.println("\nWorking on Dev Project");
 		
 	}
 
 
-	@Autowired
-	// below is setter injection
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
-	}
+//	@Autowired
+//	// below is setter injection
+//	public void setLaptop(Laptop laptop) {
+//		this.laptop = laptop;
+//	}
 }
