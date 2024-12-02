@@ -1,10 +1,13 @@
 package com.springboot.SpringBootDemo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dev {
 	
-	public String buid()
+	public void buid()
 	{
-		return "Working on this Project";
+		System.out.println("Working on this Project");
 		
 	}
 }
