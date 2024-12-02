@@ -16,10 +16,10 @@ public class App
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
         //spring.xml contains configurations for spring project
         Dev dev = (Dev) applicationContext.getBean("dev");
-        Dev dev2 = (Dev) applicationContext.getBean("dev2");//we can use id specified in spring.xml
+//        Dev dev2 = (Dev) applicationContext.getBean("dev2");//we can use id specified in spring.xml
         					//if id is used, it will give object of type Object, so we have to cast it
         dev.build();
-        dev2.build();
+//        dev2.build();
         
     }
 }

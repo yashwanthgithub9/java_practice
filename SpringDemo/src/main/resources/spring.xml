@@ -7,13 +7,15 @@
 
     <!-- Bean definition with id 'dev' -->
     <bean id="dev" class="com.spring.SpringDemo.Dev">
+    	<!--  <property name="laptop" ref="laptop1"></property>-->
+    	<constructor-arg ref="laptop1"></constructor-arg>
 
     </bean>
     
     <bean id="dev2" class="com.spring.SpringDemo.Dev">
 
     </bean>
-    <bean id="laptop" class="com.spring.SpringDemo.Laptop">
+    <bean id="laptop1" class="com.spring.SpringDemo.Laptop">
 
     </bean>
 
