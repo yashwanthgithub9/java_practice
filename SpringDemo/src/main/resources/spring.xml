@@ -14,9 +14,9 @@
 <!--     <bean id="dev2" class="com.spring.SpringDemo.Dev">
 
     </bean> -->
-<!--     <bean id="comp" class="com.spring.SpringDemo.Laptop">
+<bean id="comp" class="com.spring.SpringDemo.Laptop" primary="true">
 
-    </bean> -->
+    </bean>
           <bean id="desktop1" class="com.spring.SpringDemo.Desktop">
 
     </bean>
