@@ -6,16 +6,18 @@
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
     <!-- Bean definition with id 'dev' -->
-    <bean id="dev" class="com.spring.SpringDemo.Dev">
+    <bean id="dev" class="com.spring.SpringDemo.Dev" autowire="byName">
     	<!--  <property name="laptop" ref="laptop1"></property>-->
-    	<constructor-arg ref="laptop1"></constructor-arg>
-
+		<constructor-arg ref="desktop1"></constructor-arg> 
     </bean>
     
-    <bean id="dev2" class="com.spring.SpringDemo.Dev">
+<!--     <bean id="dev2" class="com.spring.SpringDemo.Dev">
+
+    </bean> -->
+    <bean id="laptop1" class="com.spring.SpringDemo.Laptop">
 
     </bean>
-    <bean id="laptop1" class="com.spring.SpringDemo.Laptop">
+     <bean id="desktop1" class="com.spring.SpringDemo.Desktop">
 
     </bean>
 

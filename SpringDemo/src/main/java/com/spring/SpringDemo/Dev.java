@@ -2,16 +2,16 @@ package com.spring.SpringDemo;
 
 public class Dev {
 	
-	private Laptop laptop;
+	private Computer comp;
 	
 	
-	public Dev(Laptop laptop) {
+	public Dev(Computer comp) {
 		super();
-		this.laptop = laptop;
-	}
+		this.comp = comp;
+	} 
 
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
+	public void setLaptop(Computer comp) {
+		this.comp = comp;
 	}
 
 	public Dev() {
@@ -19,7 +19,7 @@ public class Dev {
 	}
 	
 	public void build() {
-		laptop.compile();
+		comp.compile();
 		System.out.println("Building Spring Demo");
 	}
 
