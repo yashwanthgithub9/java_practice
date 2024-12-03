@@ -4,13 +4,17 @@ public class Dev {
 	
 	private Computer comp;
 	
-	
+
 	public Dev(Computer comp) {
 		super();
 		this.comp = comp;
-	} 
+	}
 
-	public void setLaptop(Computer comp) {
+	public Computer getComp() {
+		return comp;
+	}
+
+	public void setComp(Computer comp) {
 		this.comp = comp;
 	}
 
