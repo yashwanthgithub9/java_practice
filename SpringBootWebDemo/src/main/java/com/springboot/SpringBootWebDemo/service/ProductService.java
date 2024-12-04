@@ -19,4 +19,10 @@ public class ProductService {
 		
 	}
 
+
+	public Product getProductByID(int pid) {
+		// TODO Auto-generated method stub
+		return products.stream().filter(p-> p.getProdId()==pid).findFirst().orElse(new Product(0,"No Item",0));
+				}
+
 }
