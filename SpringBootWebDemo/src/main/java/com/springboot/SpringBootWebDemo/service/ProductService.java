@@ -33,4 +33,33 @@ public class ProductService {
 		
 	}
 
+
+	public void update(Product product) {
+		// TODO Auto-generated method stub
+		int ind=0;
+		for (Product product2 : products) {
+			if (product2.getProdId()== product.getProdId()) {
+				ind = product2.getProdId();
+			}
+		}		
+		
+		products.set(ind, product);
+	}
+
+
+	public void delete(int prodId) {
+		// TODO Auto-generated method stub
+		
+		int ind=0;
+		for (Product product2 : products) {
+			if (product2.getProdId()== prodId) {
+				ind = product2.getProdId();
+			}
+		}	
+		
+		products.remove(ind);
+		
+		
+	}
+
 }
