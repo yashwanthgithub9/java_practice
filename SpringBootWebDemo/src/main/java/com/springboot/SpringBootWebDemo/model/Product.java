@@ -2,9 +2,14 @@ package com.springboot.SpringBootWebDemo.model;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Component
+@Entity
 public class Product {
 	
+	@Id
 	private int prodId;
 	private String prodName;
 	private int price;
@@ -37,6 +42,8 @@ public class Product {
 		return "Product [prodId=" + prodId + ", prodName=" + prodName + ", price=" + price + "]";
 	}
 	
-	
+	public Product() {
+		
+	}
 
 }
