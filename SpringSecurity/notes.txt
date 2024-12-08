@@ -1,0 +1,38 @@
+Before CSRF
+
+ {
+        "id": 1,
+        "name": "Yash",
+        "marks": 98
+    },
+    {
+        "id": 2,
+        "name": "Reddy",
+        "marks": 99
+    },
+    
+    
+After
+
+[
+    {
+        "id": 1,
+        "name": "Yash",
+        "marks": 98
+    },
+    {
+        "id": 2,
+        "name": "Reddy",
+        "marks": 99
+    },
+    {
+        "id": 3,
+        "name": "Purra",
+        "marks": 97
+    }
+]
+
+Update the following in POSTMAN
+1.AUthorizaion --> Basic Auth
+2.Header--> Key and Value from CSRF key and token
+3.body --> JSON input

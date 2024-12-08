@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.security.web.csrf.CsrfToken;
 //import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
 public class StudentController {
 	
@@ -32,10 +34,10 @@ public class StudentController {
 	
 	}
 	
-//	@GetMapping("csrf-token")
-//	public CsrfToken getcsrf(HttpServletRequest httpServletRequest) {
-//		return (CsrfToken) httpServletRequest.getAttribute("_csrf");
-//	}
+	@GetMapping("csrf-token")
+	public CsrfToken getcsrf(HttpServletRequest httpServletRequest) {
+		return (CsrfToken) httpServletRequest.getAttribute("_csrf");
+	}
 	
 	
 	// when you want to work on POST,PUT and DELETE you are actually trying to modify data on the website..
