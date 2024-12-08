@@ -1,6 +1,7 @@
 package com.springboot.SpringBootWebDemo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,7 +27,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/products/{prodId}")
-	public Product getProduct(@PathVariable int  prodId) { //@PathVariabe matches prodId in URL with this method args
+	public Optional<Product> getProduct(@PathVariable int  prodId) { //@PathVariabe matches prodId in URL with this method args
 		return service.getProductByID(prodId);
 		
 	}
