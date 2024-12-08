@@ -1,14 +1,17 @@
 package com.Spring.SpringSecurity;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 public class HomeController {
 	
-	@RequestMapping("/")
-	public String greet() {
-		return "Welcome to Home Page...";
+	@GetMapping("/")
+	public String greet(HttpServletRequest req) {
+		return "Welcome to Home Page..." + req.getSession().getId()+req.getSession() ;
+		
 	}
 
 }
