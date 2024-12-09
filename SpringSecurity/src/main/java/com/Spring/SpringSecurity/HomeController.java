@@ -10,7 +10,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String greet(HttpServletRequest req) {
-		return "Welcome to Home Page..." + req.getSession().getId()+req.getSession() ;
+		return "Welcome to Home Page..." + req.getSession().getId() ;
 		
 	}
 
