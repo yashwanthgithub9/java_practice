@@ -20,8 +20,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 	
-	  @Autowired
-	 private UserDetailsService userDetailsService;
+	@Autowired
+	private UserDetailsService userDetailsService;
 	
 	@Bean
 	public SecurityFilterChain chain(HttpSecurity httpSecurity) throws Exception {

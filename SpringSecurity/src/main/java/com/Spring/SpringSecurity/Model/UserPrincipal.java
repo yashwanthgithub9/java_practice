@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserPrincipal implements UserDetails{
 	
-	Users user;
+	private Users user;
 
 	public UserPrincipal(Users user) {
 		// TODO Auto-generated constructor stub

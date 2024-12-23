@@ -36,3 +36,7 @@ Update the following in POSTMAN
 1.AUthorizaion --> Basic Auth
 2.Header--> Key and Value from CSRF key and token
 3.body --> JSON input
+
+
+#spring.security.user.name=yash --> Remove or comment default username from application.properties 
+#spring.security.user.password=reddy --> removing will search for database creds
