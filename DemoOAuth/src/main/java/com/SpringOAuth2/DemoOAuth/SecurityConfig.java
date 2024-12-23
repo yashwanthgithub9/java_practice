@@ -16,8 +16,6 @@ public class SecurityConfig {
 				.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
 				.oauth2Login(Customizer.withDefaults());
 		
-		
-		
 		return httpSecurity.build();
 		
 	}
