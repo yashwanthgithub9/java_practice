@@ -48,3 +48,18 @@ bcrypt passwrd
 2	reddy	reddy@123
 3	purra	purra@123
 4	bumrah	$2a$12$8yh6DQMGa4W2b.sTL96gnuoiniul7NxGHW/0G50nBbvS/l..lM7QK
+
+
+Common JWT token 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Inlhc2giLCJpYXQiOjE1MTYxNDM0NTEzfQ.eGI-j7mQM8KiIour2_yPYe_IuCXHk22LmzS2AS1PGw4
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Inlhc2giLCJpYXQiOjE1MTYxNDM0NTEzfQ.eGI-j7mQM8KiIour2_yPYe_IuCXHk22LmzS2AS1PGw4
+Users [id=11, username=yash, password=yash@123]
+2024-12-23T17:41:14.059+05:30  WARN 5824 --- [SpringSecurity] [nio-8090-exec-3] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+Users [id=11, username=yash, password=yash@123]
+2024-12-23T17:59:43.612+05:30  WARN 5824 --- [SpringSecurity] [nio-8090-exec-6] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+Users [id=11, username=yash, password=yash@123]
+2024-12-23T18:00:20.577+05:30  WARN 5824 --- [SpringSecurity] [nio-8090-exec-7] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+Users [id=11, username=yash, password=yash@123]
+2024-12-23T18:00:40.545+05:30  WARN 5824 --- [SpringSecurity] [nio-8090-exec-8] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+Users [id=11, username=purra, password=purra@123]

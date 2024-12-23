@@ -3,9 +3,11 @@ package com.Spring.SpringSecurity.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -44,8 +46,10 @@ public class SecurityConfig {
 		
 		return httpSecurity
 			.csrf(customizer->customizer.disable())
-			.authorizeHttpRequests(req->req.anyRequest().authenticated())
-			.formLogin(Customizer.withDefaults())
+			.authorizeHttpRequests(req->req
+					.requestMatchers("login","register").permitAll()
+					.anyRequest().authenticated())
+//			.formLogin(Customizer.withDefaults())
 			.httpBasic(Customizer.withDefaults())
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.build();
@@ -79,5 +83,10 @@ public class SecurityConfig {
 
 	        return provider;
 	    }
+	  @Bean
+	  public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
+		  
+	  }
 
 }

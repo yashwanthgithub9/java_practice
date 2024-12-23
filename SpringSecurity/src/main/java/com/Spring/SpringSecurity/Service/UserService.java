@@ -1,6 +1,9 @@
 package com.Spring.SpringSecurity.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +12,12 @@ import com.Spring.SpringSecurity.Repo.UserRepo;
 
 @Service
 public class UserService {
+	
+    @Autowired
+    private JWTService jwtService;
+
+    @Autowired
+    private AuthenticationManager authManager;
 	
 	@Autowired
 	private UserRepo repo;
@@ -21,6 +30,18 @@ public class UserService {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		return repo.save(user); //Now one user is added into DB
 	}
+
+
+	public String verify(Users user) {
+		// TODO Auto-generated method stub
+		Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+		   if (authentication.isAuthenticated()) {
+		         return jwtService.generateToken()  ;
+		        } else {
+		            return "fail";
+		   }
+	}
+	}
 	
 //	1	yash	yash@123
 //	2	reddy	reddy@123
@@ -32,4 +53,4 @@ public class UserService {
 //	4	bumrah	$2a$12$8yh6DQMGa4W2b.sTL96gnuoiniul7NxGHW/0G50nBbvS/l..lM7QK
 
 	// updated a bcrypted password for user3
-}
+
