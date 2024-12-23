@@ -40,3 +40,11 @@ Update the following in POSTMAN
 
 #spring.security.user.name=yash --> Remove or comment default username from application.properties 
 #spring.security.user.password=reddy --> removing will search for database creds
+
+
+
+bcrypt passwrd
+1	yash	yash@123
+2	reddy	reddy@123
+3	purra	purra@123
+4	bumrah	$2a$12$8yh6DQMGa4W2b.sTL96gnuoiniul7NxGHW/0G50nBbvS/l..lM7QK
