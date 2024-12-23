@@ -31,4 +31,5 @@ public class UserService {
 //	3	purra	purra@123
 //	4	bumrah	$2a$12$8yh6DQMGa4W2b.sTL96gnuoiniul7NxGHW/0G50nBbvS/l..lM7QK
 
+	// updated a bcrypted password for user3
 }
