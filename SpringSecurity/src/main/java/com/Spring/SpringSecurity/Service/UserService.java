@@ -28,7 +28,8 @@ public class UserService {
 	public Users addUser(Users user) {
 		// TODO Auto-generated method stub
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-		return repo.save(user); //Now one user is added into DB
+		repo.save(user); //Now one user is added into DB
+		return user;
 	}
 
 
@@ -36,8 +37,9 @@ public class UserService {
 		// TODO Auto-generated method stub
 		Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 		   if (authentication.isAuthenticated()) {
-		         return jwtService.generateToken()  ;
+		         return jwtService.generateToken(user.getUsername())  ;
 		        } else {
+		        	System.out.println("Not able to generate token");
 		            return "fail";
 		   }
 	}
