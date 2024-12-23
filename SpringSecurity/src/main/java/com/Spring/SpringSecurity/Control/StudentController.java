@@ -1,4 +1,4 @@
-package com.Spring.SpringSecurity;
+package com.Spring.SpringSecurity.Control;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.Spring.SpringSecurity.Model.Student;
 
 import jakarta.servlet.http.HttpServletRequest;
 

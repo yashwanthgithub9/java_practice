@@ -1,4 +1,4 @@
-package com.Spring.SpringSecurity;
+package com.Spring.SpringSecurity.Model;
 
 public class Student {
 	
