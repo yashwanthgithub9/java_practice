@@ -38,3 +38,14 @@ console.log(companies.shift());
 companies.splice(1,1,"Ola");
 companies.push("Amazon");
 console.log(companies);
+
+function countVowels(str){
+    let count=0;
+    for (let element of str) {
+        if (element==='a'||element==='e'||element==='i'||element==='o'||element==='u') {
+            count++
+        }
+    }
+    console.log(count);
+}
+countVowels("Aaa");
