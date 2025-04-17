@@ -27,3 +27,8 @@ let obj={
 console.log("Cost of " +obj.item+" is "+obj.price+" Rupees ");//spaces are explicitly added, price is converted to string so not highlighted in console
 console.log("Cost of",obj.item,"is",obj.price,"Rupees");//spaces are automatically added, price is still int so highlighted
 console.log(`Cost of ${obj.item} is ${obj.price} Rupees`);//spaces are expicitly added, price is converted to string so not highlighted in console
+
+let fullName=prompt("Please enter your name:");
+let username = "@"+fullName;
+username+=fullName.length;
+console.log("Userame generated based on entered name is : ",username);
