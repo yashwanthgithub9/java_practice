@@ -28,7 +28,13 @@ console.log("Cost of " +obj.item+" is "+obj.price+" Rupees ");//spaces are expli
 console.log("Cost of",obj.item,"is",obj.price,"Rupees");//spaces are automatically added, price is still int so highlighted
 console.log(`Cost of ${obj.item} is ${obj.price} Rupees`);//spaces are expicitly added, price is converted to string so not highlighted in console
 
-let fullName=prompt("Please enter your name:");
-let username = "@"+fullName;
-username+=fullName.length;
-console.log("Userame generated based on entered name is : ",username);
+// let fullName=prompt("Please enter your name:");
+// let username = "@"+fullName;
+// username+=fullName.length;
+// console.log("Userame generated based on entered name is : ",username);
+
+let companies = ["Bloomberg","Microsoft","Uber","Google","IBM","Netflix"];
+console.log(companies.shift());
+companies.splice(1,1,"Ola");
+companies.push("Amazon");
+console.log(companies);
