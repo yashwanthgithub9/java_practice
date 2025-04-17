@@ -1,2 +1,29 @@
 console.log("Hello World");
-alert("Stop");
+//alert("Stop");
+
+let a = 10;
+console.log(a+5);
+
+let age1= 19;
+console.log(age1>18?"Adult":"Not Adult");
+let iceCream = "chocolate";
+// if (iceCream === "chocolate") {
+//   alert("Yay, I love chocolate ice cream!");
+// } else {
+//   alert("Awwww, but chocolate is my favorite…");
+// }
+
+/*const age = prompt("Please enter your age:");
+if (age !== null) {
+    console.log("Your age is:", age);
+} else {
+    console.log("User cancelled the prompt.");
+}*/
+
+let obj={
+    item:"pen",
+    price:15
+}
+console.log("Cost of " +obj.item+" is "+obj.price+" Rupees ");//spaces are explicitly added, price is converted to string so not highlighted in console
+console.log("Cost of",obj.item,"is",obj.price,"Rupees");//spaces are automatically added, price is still int so highlighted
+console.log(`Cost of ${obj.item} is ${obj.price} Rupees`);//spaces are expicitly added, price is converted to string so not highlighted in console
