@@ -83,5 +83,18 @@
 // console.log(`Sum of firt ${n} digits is : `,array.reduce((res,cur)=>res+cur));
 // console.log(`Factorial of ${n} is : `,array.reduce((prev,cur)=>prev*cur));
 
-console.dir(document.body);
-console.log(document.body);
+// console.dir(document.body);
+// console.log(document.body);
+// // let heading1 = document.getElementById("heading");
+// let heading1 = document.querySelector("#heading");
+// heading1.innerText = "Hello World!";
+// heading1.innerHTML = "<b>Hello World!</b>";
+// heading1.style.color = "red";
+// console.dir(heading1);
+// let para = document.getElementById("content");
+
+let divs=document.querySelectorAll(".box");
+console.dir(divs);
+divs[0].innerText="Hello World! from div1";
+divs[1].innerText="Hello World! from div2";
+divs[2].innerText="Hello World! from div3";
