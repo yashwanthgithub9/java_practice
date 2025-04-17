@@ -97,4 +97,43 @@ let divs=document.querySelectorAll(".box");
 console.dir(divs);
 divs[0].innerText="Hello World! from div1";
 divs[1].innerText="Hello World! from div2";
+divs[1].style.color="blue";
+divs[1].style.fontSize="20px";
+divs[1].style.fontWeight="bold";
+divs[1].style.backgroundColor="yellow";
 divs[2].innerText="Hello World! from div3";
+
+let id=document.querySelector("div").getAttribute("class");//getattribute is used to get the value of attribute of an element
+console.log(id);
+let para=document.querySelector("p").getAttribute("id");//getattribute is used to get the value of attribute of an element
+console.log(para);
+document.querySelector("p").setAttribute("id","para1");//setattribute is used to set the value of attribute of an element
+console.log(document.querySelector("p").getAttribute("id"));//getattribute is used to get the value of attribute of an element
+let divstyle = document.querySelector("div");
+divstyle.style.backgroundColor = "red"; //set the background color of div to red
+
+let newButton = document.createElement("button"); //create a new button element
+newButton.innerText = "Click Me"; //set the text of button
+newButton.style.backgroundColor = "blue"; //set the background color of button to blue
+newButton.style.color = "white"; //set the color of button to white
+newButton.style.fontSize = "20px"; //set the font size of button to 20px
+newButton.style.fontWeight = "bold"; //set the font weight of button to bold
+newButton.style.border = "none"; //set the border of button to none
+newButton.style.padding = "10px 20px"; //set the padding of button to 10px 20px
+newButton.style.borderRadius = "5px"; //set the border radius of button to 5px
+newButton.style.cursor = "pointer"; //set the cursor of button to pointer
+newButton.style.height = "40px"; //set the height of button to 40px
+divs[2].append(newButton); //append the button to div2, div 3 is not there
+divs[2].style.backgroundColor = "green"; //set the background color of div to green
+divs[2].style.color = "white"; //set the color of div to white  
+divs[2].prepend(newButton); //append the button to div2
+newButton.addEventListener("click", () => {
+  alert("Hello World! from button");
+});
+
+let newPara = document.createElement("p"); //create a new paragraph element
+newPara.innerText = "Hello World! from paragraph"; //set the text of paragraph
+// document.querySelector("body").append(newPara); //append the paragraph to body
+document.querySelector("body").appendChild(newPara); //append the paragraph to body
+
+document.querySelector(".para").classList.add("newClass"); //add a new class to the paragraph

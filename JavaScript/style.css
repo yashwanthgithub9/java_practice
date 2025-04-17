@@ -64,4 +64,23 @@ footer {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
+    height: 100px;
+    display: flex;
+}
+
+.para{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: #ebe6e6;
+    flex-grow: 1;
+    background-color: #522b2b;
+}
+.newClass{
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 100px;
+    display: flex;
 }
