@@ -3,7 +3,7 @@ let compScore=0;
 
 let userScoreEditor=document.querySelector("#user-score");
 let compScoreEditor=document.querySelector("#comp-score");
-let msg=document.querySelector("#msg");
+let msg=document.querySelector(".msg-box");
 const choices=document.querySelectorAll(".choice");
 choices.forEach((choice)=>{
     choice.addEventListener("click",()=>{
@@ -54,16 +54,20 @@ let result=(userWinCase)=>{
         console.log("User Won");
         userScoreEditor.innerHTML=userScore;
         msg.innerHTML="User Won this Game !!!"
-
+        msg.style.backgroundColor="green";
     }else{
         compScore++;
         console.log("Comp won ",compScore," times");
         console.log("Comp Won");
         compScoreEditor.innerHTML=compScore;
         msg.innerHTML="Computer won this Game !!!"
+        msg.style.backgroundColor="red";
+
     }
 }
 let drawGame=()=>{
     console.log("Game Drawn")
     msg.innerHTML="Matc Drawn, click icons again !!!"
+    msg.style.backgroundColor="blue";
+
 }
