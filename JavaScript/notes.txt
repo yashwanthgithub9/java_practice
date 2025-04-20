@@ -1,0 +1,27 @@
+checkWinner = () => {
+    // for (let i = 0; i < winningCombinations.length; i++) {
+    //     const [a, b, c] = winningCombinations[i];
+    //     if (gameState[a] === "" || gameState[b] === "" || gameState[c] === "") {
+    //         continue; // Skip if any of the boxes are empty
+    //     }
+    //     if (gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+    //         gameActive = false; // Game is over
+    //         if (gameState[a] === playerO) {
+    //             playerOscore++;
+    //             // document.querySelector("#playerO-score").innerHTML = playerOscore;
+    //             alert("Player O wins!");
+    //         } else {
+    //             playerXscore++;
+    //             // document.querySelector("#playerX-score").innerHTML = playerXscore;
+    //             alert("Player X wins!");
+    //         }
+    //         return;
+    //     }
+    // }
+
+    // if (!gameState.includes("")) {
+    //     alert("It's a draw!");
+    //     gameActive = false; // Game is over
+    // }
+    
+}

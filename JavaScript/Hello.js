@@ -137,3 +137,29 @@ newPara.innerText = "Hello World! from paragraph"; //set the text of paragraph
 document.querySelector("body").appendChild(newPara); //append the paragraph to body
 
 document.querySelector(".para").classList.add("newClass"); //add a new class to the paragraph
+
+let btn1=document.querySelector("#btn1"); //get the button element
+let clicks=0; //initialize the click count to 0
+btn1.onclick=(e)=>{ //add click event to button
+  console.log(e); //log the event object
+  console.log(e.target); //log the target element of the event
+    clicks++; //increment the click count
+    console.log("Button clicked " + clicks + " times"); //log the click count
+}
+let p=document.querySelector("counter-para"); //get the paragraph element
+btn1.addEventListener("click",()=>{ //add click event to button
+  console.log("Button 1 clicked",clicks,"times"); //log the click event
+})
+btn1.addEventListener("click",()=>{ //add click event to button
+  console.log("Button 2 clicked",clicks,"times"); //log the click event
+})
+const handler3=()=>{
+  console.log("Button 3 clicked",clicks,"times");
+}
+btn1.addEventListener("click",handler3); //add click event to button  
+btn1.removeEventListener("click",handler3); //remove click event from button
+btn1.addEventListener("click",()=>{ //add click event to button
+  //multiple events can be perfomed on same element
+  console.log("Hello World!"); //log the click event})  
+})
+
