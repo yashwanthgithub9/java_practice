@@ -72,6 +72,6 @@ body{
     margin: 20px;
     color: #980404;
 }
-#reset-button-hide{
+.reset-button-hide{
     visibility: hidden;
 }

@@ -9,7 +9,8 @@
 <body>
     <div id="tictactoe" >
         <h1 class="heading">Tic Tac Toe</h1>
-        <button id="reset-button-hide">New Game</button>
+        <h2 class="reset-button-hide">Winner</h2>
+        <button class="reset-button-hide" onclick="location.reload()">New Game</button>
         <div id="container">
             <div id="game-box">
                 <div id="game-board">
@@ -23,7 +24,7 @@
                     <button class="btn"></button>
                     <button class="btn"></button>
                 </div>
-                <button id="reset-button" >Reset Game</button>
+                <button id="reset-button" onclick="location.reload()">Reset Game</button>
                 <div id="status-message">Player  turn</div>
                 <div id="score-board">
                     <div id="player-x-score">Player X: 0</div>

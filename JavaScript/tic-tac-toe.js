@@ -2,6 +2,7 @@ let boxes=document.querySelectorAll(".btn");//this will create an array of all t
 
 let reset=document.querySelector("#reset-button");
 let status = document.querySelector("#status-message");
+let msg=document.querySelector(".reset-button-hide")
 
 let playerOscore = 0;
 let playerXscore = 0;   
@@ -24,6 +25,12 @@ let gameActive = true;
 let currentPlayer = playerOturn ? playerO : playerX; // Start with player O   
 let gameState = ["", "", "", "", "", "", "", "", ""]
 
+reset.addEventListener("click",()=>{
+    boxes.forEach(element => {
+        element.innerText="";
+    });
+});
+
 boxes.forEach((box, index) => {
     box.addEventListener("click", () =>{
         if (gameState[index] !== "" || !gameActive) {
@@ -36,6 +43,7 @@ boxes.forEach((box, index) => {
             playerOturn = false; // Switch to player X turn true
             playerXturn = true; // Switch to player O turn false
             status.innerHTML="Player X turn";
+            
             console.log(gameState);
         }
         else {
@@ -59,24 +67,34 @@ checkWinner = () => {
     for(let w=0; w<winningCombinations.length;w++){
         let [a,b,c]=winningCombinations[w];
         if (gameState[a] === "" || gameState[b] === "" || gameState[c] === "") {
-             continue; // Skip if any of the boxes are empty
-            //     
-            }
+             continue; // Skip if any of the boxes are empty    
         if (gameState[a]===gameState[b] && gameState[b]===gameState[c])
-            gameActive=false;
+            {
+                gameActive=false;
         if (gameState[a]===playerO) {//matching string should be === not =
             console.log("Winner is ",playerO);
-            status.innerHTML="Congratulation Player Player-O";
+            msg.innerHTML="Congratulations O on winning !!!";
+            msg.classList.remove("reset-button-hide");
+            // status.innerHTML="Congratulation Player Player-O";
+
                 }
         else{
             console.log("Winner is ",playerX);
-            status.innerHTML="Congratulation Player Player-X";
+            msg.innerHTML="Congratulations X on Winning !!!";
+            msg.classList.remove("reset-button-hide");
+            // status.innerHTML="Congratulation Player Player-X";
 
         }
+    }
+    
+}
         
-       }
-       if (gameActive) {
-            console.log("It's a draw")
-       }
+    }
+    if (gameActive) {
+        console.log("It's a draw")
+        msg.innerHTML="Its a Draw, please reset the game to continue";
+        msg.classList.remove("reset-button-hide");
+   }
+       
 
 }
