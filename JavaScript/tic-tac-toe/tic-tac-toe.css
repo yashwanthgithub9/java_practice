@@ -74,4 +74,9 @@ body{
 }
 .reset-button-hide{
     visibility: hidden;
+    text-align: center;
+
+}
+#tictactoe{
+    align-items: center;
 }

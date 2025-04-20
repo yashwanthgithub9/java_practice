@@ -66,7 +66,7 @@ checkWinner = () => {
 
     for(let w=0; w<winningCombinations.length;w++){
         let [a,b,c]=winningCombinations[w];
-        if (gameState[a] === "" || gameState[b] === "" || gameState[c] === "") {
+        if (gameState[a] === "" || gameState[b] === "" || gameState[c] === "")
              continue; // Skip if any of the boxes are empty    
         if (gameState[a]===gameState[b] && gameState[b]===gameState[c])
             {
@@ -85,16 +85,15 @@ checkWinner = () => {
             // status.innerHTML="Congratulation Player Player-X";
 
         }
+        return;
     }
-    
+    // console.log(w)
 }
+if (!gameState.includes("")) {
+    console.log("It's a draw")
+    msg.innerHTML="Its a Draw, please reset the game to continue";
+    msg.classList.remove("reset-button-hide");
         
     }
-    if (gameActive) {
-        console.log("It's a draw")
-        msg.innerHTML="Its a Draw, please reset the game to continue";
-        msg.classList.remove("reset-button-hide");
+    
    }
-       
-
-}
