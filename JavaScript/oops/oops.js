@@ -36,3 +36,30 @@ class engineer extends Person{
 }
 
 let engObj=new engineer;
+
+
+class User{
+    constructor(name,email){
+        this.name=name;
+        this.email=email;
+    }
+    viewData(){
+        console.log("Name is = ",this.name);
+        console.log("Email is = ",this.email);
+    }
+
+}
+
+class Admin extends User{
+    editData(newName,newEmail,User){
+        User.name=newName;
+        User.email=newEmail;
+    }
+}
+
+let user1= new User("Yash","yash@gmail.com");
+let user2= new User("reddy","reddy@gmail.com");
+
+let admin = new Admin();
+admin.editData("Purra","purra@gmail.com",user1);//edit function that takes data and user to edit details
+
