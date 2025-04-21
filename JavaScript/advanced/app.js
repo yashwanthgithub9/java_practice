@@ -139,3 +139,4 @@ function getData(dataId){
     await getData(11);
     await getData(12);
 })(); // this will execute the function automatically
+// but this block surrounded by (...)(); can only be used once
