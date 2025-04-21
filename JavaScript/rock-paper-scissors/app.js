@@ -19,7 +19,7 @@ let playGame=(userChoice)=>{
     let compChoice=genCompChoice();
     console.log("Computer choice = ",compChoice);
     if (userChoice===compChoice) {
-        drawGame();
+        drawGame(userChoice,compChoice);
         return;
     }
     else{
@@ -36,7 +36,7 @@ let playGame=(userChoice)=>{
             //rock,paper
             userWinCase=compChoice==="rock"?false:true;
         }
-        result(userWinCase);
+        result(userWinCase,compChoice,userChoice);
     }
 }
 
@@ -47,27 +47,27 @@ let genCompChoice=()=>{
     return option;
 }
 
-let result=(userWinCase)=>{
+let result=(userWinCase,compChoice,userChoice)=>{
     if(userWinCase) {
         userScore++;
         console.log("User won ",userScore," times");
         console.log("User Won");
         userScoreEditor.innerHTML=userScore;
-        msg.innerHTML="User Won this Game !!!"
+        msg.innerHTML=`User Won this Game !!! ${userChoice} beats ${compChoice}`;
         msg.style.backgroundColor="green";
     }else{
         compScore++;
         console.log("Comp won ",compScore," times");
         console.log("Comp Won");
         compScoreEditor.innerHTML=compScore;
-        msg.innerHTML="Computer won this Game !!!"
-        msg.style.backgroundColor="red";
+        msg.innerHTML=`Computer won this Game !!! ${compChoice} beats ${userChoice}`;
+                msg.style.backgroundColor="red";
 
     }
 }
-let drawGame=()=>{
+let drawGame=(userChoice,compChoice)=>{
     console.log("Game Drawn")
-    msg.innerHTML="Matc Drawn, click icons again !!!"
+    msg.innerHTML=`Match Drawn,both of you chose ${userChoice} click icons again !!!`;
     msg.style.backgroundColor="blue";
 
 }
