@@ -2,7 +2,7 @@ console.log("one");
 console.log("two");
 
 setTimeout(()=>{ // timeout function to delay execution
-    console.log("Timed out log")
+    // console.log("Timed out log")
 },4000)//4sec =4000millisec
 
 console.log("three");// js doesn't stop for timeout to execute, if we see console, one to four are 
@@ -10,14 +10,14 @@ console.log("three");// js doesn't stop for timeout to execute, if we see consol
 //this is called asynchrounous way of execution
 console.log("four");
 
-function getData(dataId,getNextData){
-    setTimeout(()=>{
-        if (getNextData) {
-            getNextData();
-        }
-        console.log("data = ",dataId);
-    },2000)
-}
+// function getData(dataId,getNextData){
+//     setTimeout(()=>{
+//         if (getNextData) {
+//             getNextData();
+//         }
+//         // console.log("data = ",dataId);
+//     },2000)
+// }
 
 getData(2); //2s timer started 
 getData(3); //2s timer started
@@ -25,9 +25,44 @@ getData(4); //2s timer started
 // all the timers started at same time so after 2 sec all three will log output
 // we need 6sec execution time but time we got is 2 sec
 
+//Callback Hell or Pyramid of doom
 getData(5,getData(6));// we cannont pass this way as getdata(2) will get executed immediatly
-getData(7,()=>{
-    getData(8,()=>{// this nested Callback will wait 2sec for (1) to execute and go for (2)
-        getData(9);// as we didn't mention any next funtoin it will stop here
-    })
+
+
+let promise = new Promise((resolve,reject)=>{ // we are explicitly creating promise objects, practically other APIs create promise
+
+    console.log("promise");
+    resolve("Success");// without this, promise state ="pending", result="undefined"
+    //with resolve it changes to "fulfilled", "success"
+    reject("Error"); // it will throws uncaught error
+});
+const getPromise=()=>{
+    return new Promise((resolve,reject)=>{
+        console.log("I'm a promise");
+        resolve("Yes");
+    });
+}
+let promiseThen = getPromise();
+promiseThen.then(()=>{
+    console.log("Promise success")
 })
+
+function getData(dataId,getNextData){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("Data = ",dataId);
+            resolve("Data resolved");
+            if (getNextData) {
+                getNextData();
+            }
+            // console.log("data = ",dataId);
+        },5000);
+    })
+
+}
+
+// getData(7,()=>{
+//     getData(8,()=>{// this nested Callback will wait 2sec for (1) to execute and go for (2)
+//         getData(9);// as we didn't mention any next funtoin it will stop here
+//     })
+// })

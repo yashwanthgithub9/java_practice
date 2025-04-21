@@ -1,0 +1,25 @@
+let result=getData(123);
+undefined
+result
+Promise {<pending>}
+[[Prototype]]
+: 
+Promise
+[[PromiseState]]
+: 
+"fulfilled"
+[[PromiseResult]]
+: 
+"Data resolved"
+app.js:53 Data =  123
+result
+Promise {<fulfilled>: 'Data resolved'}
+[[Prototype]]
+: 
+Promise
+[[PromiseState]]
+: 
+"fulfilled"
+[[PromiseResult]]
+: 
+"Data resolved"
