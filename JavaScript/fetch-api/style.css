@@ -1,0 +1,11 @@
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: firebrick;
+}
+button{
+    background-color: rgb(162, 105, 30);
+    color: #f8f4f4;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: large;
+}

@@ -1,4 +1,7 @@
 let url="https://meowfacts.herokuapp.com/";
+let para=document.querySelector("#para");
+let btn=document.querySelector("#btn");
+
 
 
 const getFacts=async ()=>{ //making this arrow function async
@@ -7,4 +10,7 @@ const getFacts=async ()=>{ //making this arrow function async
     console.log(response); // JSON format
     let datatext=await response.json(); //JSON to JS object conversion
     console.log(datatext.data);// trying to print JS objects
+    para.innerText=datatext.data;
 }
+
+btn.addEventListener("click",getFacts);
