@@ -38,8 +38,7 @@ const updateFlag=(el)=>{
     let img=el.parentElement.querySelector("img");//.parentElement and .queryselector are not suggesting we had to type completely
     img.src=newSrc;
 }
-
-btn.addEventListener("click",async (event)=>{
+async function updateRate() {
     event.preventDefault();// default event like loading page will be disabled
     let amount=document.querySelector(".amount input");//amount gives html object have to convert it to value
     console.log(`Button clicked ${amount.value} times`);//converted from onject to value
@@ -74,4 +73,15 @@ let toCurr=document.querySelector(".to select").value;
         amount.value=0;
         amount=0;
     }
+}
+
+btn.addEventListener("click",async (event)=>{
+    event.preventDefault();
+    updateRate();
 });
+window.addEventListener("load",()=>{
+    // alert("Hehee");
+    updateRate();
+    // out.innerText=`${amount.value} ${fromCurr} = ${finalAmount} ${toCurr}`;
+
+})
