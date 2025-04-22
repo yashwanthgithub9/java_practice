@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    color: black;
+
+}
+.container{
+    background-color:cornflowerblue;
+    margin: 5%;
+    padding: 5%;
+    border-radius: 5%;
+}
+h2{
+    color:white;
+}
+form{
+    padding: 2.5%;
+}
+form, select,input{
+    width: 100%;
+}
+
+input, select{
+    border-radius: 5px;
+    padding: 2.5%;
+    width: 90%;
+}
+
+.msg{
+    margin: 5% 0%;
+    align-items: center;
+    justify-content: center;
+}
+p,i{
+    margin:2.5% 0%;
+}
+
+button{
+    padding: 3.5%;
+    background-color: rgb(0, 123, 255);
+    color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-color: rgb(0, 123, 255);
+    box-shadow: none;
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+
+}
+button:hover{
+    background-color: blue;
+}
+select:hover{
+    background-color: rgb(205, 204, 204);
+    font-weight: bold;
+}
+option{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+.select-container img{
+    max-width: 2rem;
+}
+.select-container{
+    display: flex;
+    width: 10rem;
+}
+#from, #to{
+    margin-right: 15%;
+    margin-left: 15%;
+    padding: 2.5%;
+}
+.dropdown i{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+p,input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
