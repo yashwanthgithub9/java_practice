@@ -1,6 +1,8 @@
-const base_url="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json";
+const base_url="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/";
 
 const dropdownS = document.querySelectorAll(".dropdown select");
+const btn = document.querySelector("button");
+let out=document.querySelector(".msg #out");
 
 // for (code in countryList) {
 //     console.log(code,countryList[code]);
@@ -12,6 +14,13 @@ for (let select of dropdownS) { // 2 selects in dropdowns "From" and "TO"
         let newOption=document.createElement("option");
         newOption.innerText=currCode;
         newOption.value=currCode;
+        // if (select.id==="from" && currCode==="IND") {
+        //     newOption.selected="selected";
+        //     newOption.value=currCode;
+        // }
+        // else if (elect.name==="To"&& currCode==="USD") {
+        //     newOption.selected="selected";
+        // }
         select.append(newOption);
     }
     select.addEventListener("change",(evt)=>{
@@ -29,3 +38,40 @@ const updateFlag=(el)=>{
     let img=el.parentElement.querySelector("img");//.parentElement and .queryselector are not suggesting we had to type completely
     img.src=newSrc;
 }
+
+btn.addEventListener("click",async (event)=>{
+    event.preventDefault();// default event like loading page will be disabled
+    let amount=document.querySelector(".amount input");//amount gives html object have to convert it to value
+    console.log(`Button clicked ${amount.value} times`);//converted from onject to value
+    // if (amount.value<1) {
+    //     alert("Enter correct amount");
+    //     amount.value="0";
+    //     amount=0;
+    // }
+    // placing below after select is fetching correct names
+let fromCurr=document.querySelector(".from select").value;// its FROM and not FORM
+let toCurr=document.querySelector(".to select").value;
+    if (amount.value>0) {
+        console.log(fromCurr);
+        console.log(toCurr);
+        const updated_url=`${base_url}${fromCurr.toLowerCase()}.json`;
+        console.log(updated_url);
+        let response= await fetch(updated_url);
+        let data= await response.json();
+        console.log(data["date"]);//date is not object
+        let contry=data[fromCurr.toLowerCase()];
+        let rate=contry[toCurr.toLowerCase()];
+        let finalAmount=amount.value*rate; // if we mutiply with amount it will throw NaN error
+        console.log(finalAmount);
+        out.innerText=`${amount.value} ${fromCurr} = ${finalAmount} ${toCurr}`;
+        // console.log(rate);
+        // console.log(contry[toCurr.toLowerCase()]);
+        // console.log(contry);
+        // console.log(data[fromCurr.toLowerCase()]);
+    }
+    else{
+        alert("Enter Correct value");
+        amount.value=0;
+        amount=0;
+    }
+});
