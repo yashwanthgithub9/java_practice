@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,53 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+/* Custom STYLE on the way... */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  padding: 40px;
+  margin-bottom: 30px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(26, 24, 24);
+  align-items: center;
+}
+h1{
+  color: rgb(240, 236, 236);
+  font-size: 30px;
+  text-align: center;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgb(21, 18, 18);
+  border-radius: 10px;
+  padding: 15px;
+}
+.card{
+  background-color: rgb(53, 50, 50);
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  color: aliceblue;
+
+}
+button{
+  border: none;
+  font-size: 15px;
+  background: green;
+  color:wheat;
+  padding: 5px;
+  border-radius: 5px;
+  cursor:pointer
 }
