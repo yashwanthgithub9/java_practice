@@ -212,7 +212,7 @@ button:focus-visible {
 }
 
 @utility text-gradient {
-  @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-[#aa9eca] to-[#a281f7] bg-clip-text text-transparent;
 }
 
 @utility fancy-text {
