@@ -34,7 +34,7 @@ import Search from './components/search'
 // }
 
 const App =()=>{
-  const[searchItem,setSearchItem]=useState('')
+  const[searchItem,setSearchItem]=useState('');
   
   return(
     <main>
@@ -47,6 +47,7 @@ const App =()=>{
             Find <span className='text-gradient'>Movies</span> you'll enjoy without any hassle
           </h1>
           <Search searchItem={searchItem} setSearchItem={setSearchItem}/>
+          <h1 className="text-white">{searchItem}</h1>
         </header>
       </div>
     </main>
