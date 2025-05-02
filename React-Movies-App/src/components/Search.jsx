@@ -8,6 +8,8 @@ const Search = ({searchItem,setSearchItem}) => { // keeping {} will destructure 
             <input type="text" name="" id="" 
             placeholder='Search for your favourite movie'
             value={searchItem}
+
+
             onChange={(e)=>setSearchItem(e.target.value)}/>
         </div>
 
