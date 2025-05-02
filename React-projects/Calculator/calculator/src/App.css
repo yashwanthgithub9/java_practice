@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+*{
+  margin: auto;
+  padding: 0;
+}
+
+.result-area{
+  padding: 1%;
+}
