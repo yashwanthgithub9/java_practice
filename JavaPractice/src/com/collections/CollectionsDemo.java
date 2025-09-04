@@ -11,7 +11,7 @@ public class CollectionsDemo {
 		System.out.println(arrayList);
 		arrayList.add(2);
 		arrayList.add(4);
-		arrayList.add(5);
+		arrayList.add(4);// duplicates are allowed
 		arrayList.add(6);
 		System.out.println(arrayList);
 		
@@ -19,7 +19,7 @@ public class CollectionsDemo {
 		HashSet<String> set = new HashSet<>();
         set.add("Apple");
         set.add("Banana");
-        set.add("Applf"); // Duplicates are not allowed // 
+        set.add("Apple"); // Duplicates are not allowed // 
         //stores in sorted array
         System.out.println("HashSet : " + set);   
 	}

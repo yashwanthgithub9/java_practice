@@ -15,7 +15,7 @@ public class Demo extends Computer{
 //		Scanner sc = new Scanner(System.in);
 //		int money = sc.nextInt();
 //		comp.getMePen(money);	
-		comp.getMePen(comp.Add(3,3 ));
+		comp.getMePen(comp.Add(2,3 ));
 		
 
 	}

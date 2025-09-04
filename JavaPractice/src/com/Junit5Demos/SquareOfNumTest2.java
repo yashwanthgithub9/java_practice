@@ -15,7 +15,7 @@ class SquareOfNumTest2 {
 		assertEquals(6, sq.sum(3, 3));
 	}
 	@Test
-	@RepeatedTest(value = 4)
+	@RepeatedTest(value = 4) //repeats test for value number of times
 	void test1() {
 //		RepetitionInfo r1 = null;
 		System.out.println("Test method ");
