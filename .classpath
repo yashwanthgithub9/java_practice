@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="abc/src"/>
+	<classpathentry kind="src" path="DemoOAuth/src/main/java"/>
+	<classpathentry kind="src" path="DemoOAuth/src/test/java"/>
+	<classpathentry kind="src" path="File-Upload-Demo/src/main/java"/>
+	<classpathentry kind="src" path="HibernateDemo/src/main/java"/>
+	<classpathentry kind="src" path="HibernateDemo/src/test/java"/>
+	<classpathentry kind="src" path="JavaPractice/src"/>
+	<classpathentry kind="src" path="JavaServlets/src/main/java"/>
+	<classpathentry kind="src" path="JDBCDemo/src"/>
+	<classpathentry kind="src" path="JpaDemo2/src/main/java"/>
+	<classpathentry kind="src" path="JpaDemo2/src/test/java"/>
+	<classpathentry kind="src" path="JSPDemo/src/main/java"/>
+	<classpathentry excluding="com/maven/hibernate/RestDemo/" kind="src" path="RestDemo/src/main/java"/>
+	<classpathentry kind="src" path="RestDemo/src/main/java/com/maven/hibernate/RestDemo"/>
+	<classpathentry kind="src" path="ServJSPJdbcMav/src/main/java"/>
+	<classpathentry kind="src" path="SpringBootDemo/src/main/java"/>
+	<classpathentry kind="src" path="SpringBootDemo/src/test/java"/>
+	<classpathentry kind="src" path="SpringBootWebDemo/src/main/java"/>
+	<classpathentry kind="src" path="SpringBootWebDemo/src/test/java"/>
+	<classpathentry kind="src" path="SpringDemo/src/main/java"/>
+	<classpathentry kind="src" path="SpringDemo/src/test/java"/>
+	<classpathentry kind="src" path="SpringSecurity/src/main/java"/>
+	<classpathentry kind="src" path="SpringSecurity/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
