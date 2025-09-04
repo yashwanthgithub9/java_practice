@@ -733,3 +733,81 @@ mysql> select distinct country,date,opponent from matches;
 mysql> save view;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'save view' at line 1
 mysql>
+
+
+
+date Sept042025
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use cricket
+Database changed
+mysql> select * from matches
+    -> ;
+Empty set (0.01 sec)
+
+mysql> show tables
+    -> ;
++-------------------+
+| Tables_in_cricket |
++-------------------+
+| matches           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from matches;
+Empty set (0.00 sec)
+
+mysql> select * from matches;
+Empty set (0.00 sec)
+
+mysql> select * from matches;
+Empty set (0.00 sec)
+
+mysql> insert into matches values("SRH","202-09-03","CSK");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from matches;
++---------+------------+----------+
+| country | date       | opponent |
++---------+------------+----------+
+| SRH     | 0202-09-03 | CSK      |
++---------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from matches;
++---------+------------+----------+
+| country | date       | opponent |
++---------+------------+----------+
+| SRH     | 0202-09-03 | CSK      |
+| DC      | 2024-09-09 | LSG      |
++---------+------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> update matches set date="2025-09-03" where country is srh
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'srh' at line 1
+mysql> update matches set date="2025-09-03" where country="SRH";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from matches;
++---------+------------+----------+
+| country | date       | opponent |
++---------+------------+----------+
+| SRH     | 2025-09-03 | CSK      |
+| DC      | 2024-09-09 | LSG      |
++---------+------------+----------+
+2 rows in set (0.00 sec)
+
+mysql>
