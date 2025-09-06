@@ -1,0 +1,17 @@
+Enter Your Name : 
+Yashwanth
+Hi "Yashwanth" Random number has been generated guess the number now
+20
+random number > 20... Guess again!
+60
+random number < 60... Guess again!
+40
+random number < 40... Guess again!
+30
+random number < 30... Guess again!
+25
+random number > 25... Guess again!
+26
+You have guessed it in 6 number of chances the number is 26
+Your guesses are [20, 60, 40, 30, 25, 26]
+false
