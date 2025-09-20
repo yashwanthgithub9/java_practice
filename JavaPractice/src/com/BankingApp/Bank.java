@@ -24,6 +24,15 @@ public class Bank {
 			}
 			else if (choice==2) {
 				System.out.println("You have chosen to login to your existing account... please enter your credentials");
+				System.out.println("enter customer name:");
+				String u=sc.next();
+				System.out.println("enter pass_code:");
+				int p= sc.nextInt();
+				if(LoginAccount.checkLogin(u, p)) {
+					System.out.println("Logged in...");
+					LoginAccount.printDetails();
+				}
+				
 			}
 			else if (choice==3) {
 				System.out.println("You have chosen to exit");
