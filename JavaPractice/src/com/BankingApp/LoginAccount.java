@@ -44,4 +44,21 @@ public class LoginAccount {
 		
 	}
 
+	public static boolean checkUsername(String u) {
+		// TODO Auto-generated method stub
+		Connection con=ConnectToMySQL.getConnection();
+		try {
+			PreparedStatement ps= con.prepareStatement("select * from customer where cname = ?");
+			ps.setString(1, u);
+			ResultSet rs= ps.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }

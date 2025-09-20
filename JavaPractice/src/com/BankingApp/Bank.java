@@ -26,12 +26,17 @@ public class Bank {
 				System.out.println("You have chosen to login to your existing account... please enter your credentials");
 				System.out.println("enter customer name:");
 				String u=sc.next();
-				System.out.println("enter pass_code:");
-				int p= sc.nextInt();
-				if(LoginAccount.checkLogin(u, p)) {
-					System.out.println("Logged in...");
-					LoginAccount.printDetails();
+				if(LoginAccount.checkUsername(u)) {
+					System.out.println("enter pass_code:");
+					int p= sc.nextInt();
+					if(LoginAccount.checkLogin(u, p)) {
+						System.out.println("Logged in...");
+						LoginAccount.printDetails();
+					}
 				}
+				else
+					System.out.println("username doesn't exist... please create a new account");
+				
 				
 			}
 			else if (choice==3) {
