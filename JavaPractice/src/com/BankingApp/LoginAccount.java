@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class LoginAccount {
 	
@@ -20,8 +21,29 @@ public class LoginAccount {
 				int passcode1=rs.getInt("pass_code");
 				if (passcode1==pass) {
 					System.out.println("Login Successful");
-					System.out.println("Account No is : "+rs.getInt("ac_no"));
-					System.out.println("Available Balance is : "+rs.getInt("balance"));
+//					System.out.println("Account No is : "+rs.getInt("ac_no"));
+//					System.out.println("Available Balance is : "+rs.getInt("balance"));
+					System.out.println("==================================");
+					System.out.println("Select action you want to choose..");
+					System.out.println("==================================");
+					System.out.println("1. Transfer Money");
+					System.out.println("2. View Balance");
+					System.out.println("3. Logout");
+					System.out.print("enter your choice : ");
+					Scanner sc = new Scanner(System.in);
+					int choice=sc.nextInt();
+					if (choice == 1) {
+						BankingOperations.transferMoney(rs.getInt("ac_no"),rs.getString("cname"));
+					}
+					if (choice==2) {
+						System.out.println("Balance = "+rs.getInt("balance"));
+						
+					}
+					if (choice==3) {
+						System.out.println("Logging out");
+						Bank.main(null);
+						
+					}
 				}
 				else
 					System.out.println("Login failed re check userame and passcode");

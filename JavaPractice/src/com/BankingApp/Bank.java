@@ -41,6 +41,7 @@ public class Bank {
 			}
 			else if (choice==3) {
 				System.out.println("You have chosen to exit");
+				main(null);
 			}
 			else {
 				System.out.println("please enter correct choice");
