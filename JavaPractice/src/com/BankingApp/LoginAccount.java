@@ -28,7 +28,8 @@ public class LoginAccount {
 					System.out.println("==================================");
 					System.out.println("1. Transfer Money");
 					System.out.println("2. View Balance");
-					System.out.println("3. Logout");
+					System.out.println("3. Deposit");
+					System.out.println("4. Logout");
 					System.out.print("enter your choice : ");
 					Scanner sc = new Scanner(System.in);
 					int choice=sc.nextInt();
@@ -40,9 +41,14 @@ public class LoginAccount {
 						
 					}
 					if (choice==3) {
+						System.out.println("Enter Amount you want to deposit");
+						int deposit=sc.nextInt();
+						BankingOperations.depositMoney(deposit,rs.getInt("ac_no"));
+						
+					}
+					if (choice==4) {
 						System.out.println("Logging out");
 						Bank.main(null);
-						
 					}
 				}
 				else

@@ -36,6 +36,7 @@ public class Bank {
 				}
 				else
 					System.out.println("username doesn't exist... please create a new account");
+					main(null);
 				
 				
 			}
