@@ -62,6 +62,18 @@ public class App2 {
         Studentinfo s1=em1.merge(studentinfo4);
         em1.getTransaction().commit();
         em1.close();
+// Delete Operation
+        EntityManager em2= entityManagerFactory.createEntityManager();
+        em2.getTransaction().begin();
+        Studentinfo sdelete = em2.find(Studentinfo.class, 3);
+        em2.remove(sdelete);
+//        Studentinfo smerge =em2.merge(sdelete);
+//        entityManagerFactory.createEntityManager().remove(smerge);
+        em2.getTransaction().commit();
+        em2.close();
+//        Getting below error
+//        Exception in thread "main" java.lang.IllegalArgumentException: Removing a detached instance com.maven.JpaDemo2.Studentinfo#3
+
         
         
         
