@@ -1,0 +1,358 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use students;
+Database changed
+mysql> select * from studentinfo;
++-------+-------+------+
+| name  | marks | roll |
++-------+-------+------+
+| Rahul |    19 | NULL |
++-------+-------+------+
+1 row in set (0.04 sec)
+
+mysql> select * from studentinfo;
++-------+-------+------+
+| name  | marks | roll |
++-------+-------+------+
+| Rahul |    19 | NULL |
++-------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> delete from studentinfo where name="Rahul";
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from studentinfo;
+Empty set (0.00 sec)
+
+mysql> select * from studentinfo;
+Empty set (0.00 sec)
+
+mysql>
+mysql> delete from studentinfo where name="Rahul";
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from studentinfo;
+Empty set (0.00 sec)
+
+mysql> delete table studentinfo;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table studentinfo' at line 1
+mysql> delete studentinfo;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> delete from students where table=studentinfo;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table=studentinfo' at line 1
+mysql> delete from studentinfo;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from studentinfo;
+Empty set (0.00 sec)
+
+mysql> drop table studentinfo;
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> drop table student;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> select * from studentinfo;
++------+-------+--------+
+| roll | marks | name   |
++------+-------+--------+
+|    1 |    50 | Hardik |
++------+-------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+--------+
+| roll | marks | name   |
++------+-------+--------+
+|    1 |    50 | Hardik |
+|    2 |    17 | Rishab |
++------+-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+
+| roll | marks | name     |
++------+-------+----------+
+|    1 |    50 | Hardik   |
+|    2 |    17 | Rishab   |
+|    3 |    18 | Virat    |
+|    4 |    18 | Virat    |
+|    5 |    45 | Rohit    |
+|    6 |    77 | Gill     |
+|    7 |    23 | Abhishek |
++------+-------+----------+
+7 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+
+| roll | marks | name     |
++------+-------+----------+
+|    1 |    50 | Hardik   |
+|    2 |    17 | Rishab   |
+|    3 |    18 | Virat    |
+|    4 |    18 | Virat    |
+|    5 |    45 | Rohit    |
+|    6 |    77 | Gill     |
+|    7 |    23 | Abhishek |
+|    8 |    18 | Virat    |
+|    9 |    45 | Rohit    |
+|   10 |    77 | Gill     |
+|   11 |    23 | Abhishek |
++------+-------+----------+
+11 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+
+| roll | marks | name     |
++------+-------+----------+
+|    1 |    50 | Hardik   |
+|    2 |    17 | Rishab   |
+|    3 |    18 | Virat    |
+|    4 |    18 | Virat    |
+|    5 |    45 | Rohit    |
+|    6 |    77 | Gill     |
+|    7 |    23 | Abhishek |
+|    8 |    18 | Virat    |
+|    9 |    45 | Rohit    |
+|   10 |    77 | Gill     |
+|   11 |    23 | Abhishek |
++------+-------+----------+
+11 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    4 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
+|    8 |    18 | Virat    |          NULL | NULL      |
+|    9 |    45 | Rohit    |          NULL | NULL      |
+|   10 |    77 | Gill     |          NULL | NULL      |
+|   11 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+11 rows in set (0.00 sec)
+
+mysql> delete from studentinfo where roll in (4,8,9,10,11);
+Query OK, 5 rows affected (0.01 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
+|   12 |    18 | Virat    |          NULL | NULL      |
+|   13 |    45 | Rohit    |          NULL | NULL      |
+|   14 |    77 | Gill     |          NULL | NULL      |
+|   15 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+-------+----------+---------------+-----------+
+| roll | marks | name     | Jersey Number | Cricketer |
++------+-------+----------+---------------+-----------+
+|    1 |    50 | Hardik   |          NULL | NULL      |
+|    2 |    17 | Rishab   |          NULL | NULL      |
+|    3 |    18 | Virat    |          NULL | NULL      |
+|    5 |    45 | Rohit    |          NULL | NULL      |
+|    6 |    77 | Gill     |          NULL | NULL      |
+|    7 |    23 | Abhishek |          NULL | NULL      |
+|   12 |    18 | Virat    |          NULL | NULL      |
+|   13 |    45 | Rohit    |          NULL | NULL      |
+|   14 |    77 | Gill     |          NULL | NULL      |
+|   15 |    23 | Abhishek |          NULL | NULL      |
+|   16 |    18 | Virat    |          NULL | NULL      |
+|   17 |    45 | Rohit    |          NULL | NULL      |
+|   18 |    77 | Gill     |          NULL | NULL      |
+|   19 |    23 | Abhishek |          NULL | NULL      |
++------+-------+----------+---------------+-----------+
+14 rows in set (0.00 sec)
+
+mysql> drop table studentinfo;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from studentinfo;
+ERROR 1146 (42S02): Table 'students.studentinfo' doesn't exist
+mysql> select * from studentinfo;
+ERROR 1146 (42S02): Table 'students.studentinfo' doesn't exist
+mysql> select * from exam;
++------+-------+----------+
+| roll | marks | name     |
++------+-------+----------+
+|    4 |    23 | Abhishek |
+|    3 |    77 | Gill     |
+|    2 |    45 | Rohit    |
+|    1 |    18 | Virat    |
++------+-------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from exam;
++------+-------+----------+
+| roll | marks | name     |
++------+-------+----------+
+|    4 |    23 | Abhishek |
+|    3 |    77 | Gill     |
+|    2 |    45 | Rohit    |
+|    1 |    18 | Virat    |
++------+-------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from exam;
++------+-------+----------+-----------+
+| roll | marks | name     | Cricketer |
++------+-------+----------+-----------+
+|    1 |    18 | Virat    | NULL      |
+|    2 |    45 | Rohit    | NULL      |
+|    3 |    77 | Gill     | NULL      |
+|    4 |    23 | Abhishek | NULL      |
+|    6 |    18 | NULL     | Virat     |
+|    7 |    45 | NULL     | Rohit     |
+|    8 |    77 | NULL     | Gill      |
+|    9 |    23 | NULL     | Abhishek  |
++------+-------+----------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> select * from exam;
++------+-------+----------+-----------+--------+
+| roll | marks | name     | Cricketer | Jersey |
++------+-------+----------+-----------+--------+
+|    1 |    18 | Virat    | NULL      |   NULL |
+|    2 |    45 | Rohit    | NULL      |   NULL |
+|    3 |    77 | Gill     | NULL      |   NULL |
+|    4 |    23 | Abhishek | NULL      |   NULL |
+|    6 |    18 | NULL     | Virat     |   NULL |
+|    7 |    45 | NULL     | Rohit     |   NULL |
+|    8 |    77 | NULL     | Gill      |   NULL |
+|    9 |    23 | NULL     | Abhishek  |   NULL |
++------+-------+----------+-----------+--------+
+8 rows in set (0.00 sec)
+
+mysql> drop table exam
+    -> ;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from exam;
++------+--------+-----------+
+| roll | Jersey | Cricketer |
++------+--------+-----------+
+|    1 |     18 | Virat     |
+|    2 |     45 | Rohit     |
+|    3 |     77 | Gill      |
+|    4 |     23 | Abhishek  |
++------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql>        //Merge operation
+        //1. create entity manager
+        EntityManager em= entityManagerFactory.createEntityManager();
+        em.getTransaction().begin();
+        //2. Find entity and detach 
+        Studentinfo studentinfo4=em.find(Studentinfo.class, 1);
+        em.getTransaction().commit();
+        em.close();
+        // 3. Update value
+        studentinfo4.setName("Virat Kohli(Updated Name using merge)");
+        // 4. new entity manager
+        EntityManager em1=entityManagerFactory.createEntityManager();
+        em1.getTransaction().begin();
+        Studentinfo s1=em1.merge(studentinfo4);
+        em1.getTransaction().commit();
+        em1.close();
+        
+ 
+mysql> select * from studentinfo;
++------+--------+-----------+
+| roll | Jersey | Cricketer |
++------+--------+-----------+
+|    1 |     18 | Virat     |
+|    2 |     45 | Rohit     |
+|    3 |     77 | Gill      |
+|    4 |     23 | Abhishek  |
++------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from studentinfo;
++------+--------+---------------------------------------+
+| roll | Jersey | Cricketer                             |
++------+--------+---------------------------------------+
+|    1 |     18 | Virat Kohli(Updated Name using merge) |
+|    2 |     45 | Rohit                                 |
+|    3 |     77 | Gill                                  |
+|    4 |     23 | Abhishek                              |
++------+--------+---------------------------------------+
+4 rows in set (0.00 sec)
+
+mysql>       
