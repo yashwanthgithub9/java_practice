@@ -3,9 +3,12 @@
  */
 package com.SpringCore.SpringCoreDemos;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  */
+//@Component
 public class Airtel implements Sim{
 
 	@Override
