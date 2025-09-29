@@ -5,11 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <!-- Bean definition with id 'dev' -->
+<!--     Bean definition with id 'dev'
     <bean id="sim1" class="com.SpringCore.SpringCoreDemos.Mobile">
-<!--     	<property name="sim" ref="simname"></property>
- -->    	<constructor-arg ref="simname"></constructor-arg>
+    	<property name="sim" ref="simname"></property>
+    	<constructor-arg ref="simname"></constructor-arg>
     </bean>
     <bean id="simname" class="com.SpringCore.SpringCoreDemos.Jio"></bean>
-
+ -->
+<!--      <context:component-scan base-package="com.SpringCore.SpringCoreDemos" /> -->
+ 
 </beans>

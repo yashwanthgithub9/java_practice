@@ -4,10 +4,12 @@
 package com.SpringCore.SpringCoreDemos;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 
  */
+@Component
 public class Mobile {
 	
 	/*
@@ -15,14 +17,14 @@ public class Mobile {
 	 * between Sim and mobile public void setSim(Sim sim) { this.sim = sim; }
 	 */
 	
-//	Constructor injection
+	/*
+	 * // Constructor injection private Sim sim;
+	 * 
+	 * public Mobile(Sim sim) { super(); this.sim = sim; }
+	 */
+	@Autowired
 	private Sim sim;
 	
-	public Mobile(Sim sim) {
-		super();
-		this.sim = sim;
-	}
-
 	public void openApp() {
 		
 		System.out.println("Opening app...");

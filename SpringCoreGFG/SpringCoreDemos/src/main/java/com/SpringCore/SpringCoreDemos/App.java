@@ -1,12 +1,16 @@
 package com.SpringCore.SpringCoreDemos;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Hello world!
  *
  */
+@Configuration
+@ComponentScan(basePackages = "com.SpringCore.SpringCoreDemos.")
 public class App 
 {
     public static void main( String[] args )

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 
  */
-//@Component
+@Component
 public class Jio implements Sim{
 
 	@Override
