@@ -4,6 +4,7 @@
 package com.SpringCore.SpringCoreDemos;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -23,6 +24,7 @@ public class Mobile {
 	 * public Mobile(Sim sim) { super(); this.sim = sim; }
 	 */
 	@Autowired
+	@Qualifier("jio")// at this point spring knows which bean to inject
 	private Sim sim;
 	
 	public void openApp() {

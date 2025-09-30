@@ -3,12 +3,15 @@
  */
 package com.SpringCore.SpringCoreDemos;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
  * 
  */
 @Component
+@Primary // this will become default injection when Sim is injected into mobile
 public class Airtel implements Sim{
 
 	@Override
