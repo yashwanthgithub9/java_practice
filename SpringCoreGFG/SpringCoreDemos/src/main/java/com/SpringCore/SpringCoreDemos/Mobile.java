@@ -24,7 +24,7 @@ public class Mobile {
 	 * public Mobile(Sim sim) { super(); this.sim = sim; }
 	 */
 	@Autowired
-	@Qualifier("jio")// at this point spring knows which bean to inject
+	@Qualifier("jiobean")// at this point spring knows which bean to inject
 	private Sim sim;
 	
 	public void openApp() {
