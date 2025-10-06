@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * 
  */
-@Component("airtelbean")
+@Component
 //@Primary // this will become default injection when Sim is injected into mobile
 public class Airtel implements Sim{
 
