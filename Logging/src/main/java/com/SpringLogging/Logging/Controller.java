@@ -12,7 +12,7 @@ public class Controller {
     @GetMapping("/")
     public String home(){
         String str = "<html><body><font color=\\\"green\\\">\"\n" +
-                    "\"<h1>WELCOME To GeeksForGeeks Logging project</h1>\"\n" +
+                    "\"<h1>WELCOME To GeeksForGeeks Logging project live reload</h1>\"\n" +
                 "\"</font></body></html>";
             return str;
     }
