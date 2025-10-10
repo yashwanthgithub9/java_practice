@@ -1,0 +1,32 @@
+2025-10-10T08:13:46.508+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 16624 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T08:13:46.512+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T08:13:47.785+05:30  INFO 16624 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T08:13:47.802+05:30  INFO 16624 --- [Logging] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T08:13:47.803+05:30  INFO 16624 --- [Logging] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T08:13:47.861+05:30  INFO 16624 --- [Logging] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T08:13:47.861+05:30  INFO 16624 --- [Logging] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1224 ms
+2025-10-10T08:13:48.284+05:30  INFO 16624 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T08:13:48.295+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.407 seconds (process running for 2.897)
+2025-10-10T08:14:09.591+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T08:14:09.591+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T08:14:09.592+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-10-10T08:18:17.921+05:30  INFO 16624 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T08:18:17.926+05:30  INFO 16624 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T08:18:21.310+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 3744 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T08:18:21.312+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T08:18:22.389+05:30  INFO 3744 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T08:18:22.405+05:30  INFO 3744 --- [Logging] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T08:18:22.406+05:30  INFO 3744 --- [Logging] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T08:18:22.465+05:30  INFO 3744 --- [Logging] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T08:18:22.466+05:30  INFO 3744 --- [Logging] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2025-10-10T08:18:22.939+05:30  INFO 3744 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T08:18:22.949+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.243 seconds (process running for 2.778)
+2025-10-10T08:18:27.242+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T08:18:27.242+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T08:18:27.243+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-10T08:18:27.272+05:30 ERROR 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : ERROR Logged
+2025-10-10T08:18:27.272+05:30  WARN 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : WARN logged
+2025-10-10T08:18:27.272+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : INFO logged
+2025-10-10T08:18:28.392+05:30 ERROR 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : ERROR Logged
+2025-10-10T08:18:28.392+05:30  WARN 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : WARN logged
+2025-10-10T08:18:28.392+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : INFO logged
