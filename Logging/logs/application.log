@@ -1,0 +1,94 @@
+2025-10-10T08:13:46.508+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 16624 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T08:13:46.512+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T08:13:47.785+05:30  INFO 16624 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T08:13:47.802+05:30  INFO 16624 --- [Logging] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T08:13:47.803+05:30  INFO 16624 --- [Logging] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T08:13:47.861+05:30  INFO 16624 --- [Logging] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T08:13:47.861+05:30  INFO 16624 --- [Logging] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1224 ms
+2025-10-10T08:13:48.284+05:30  INFO 16624 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T08:13:48.295+05:30  INFO 16624 --- [Logging] [main] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.407 seconds (process running for 2.897)
+2025-10-10T08:14:09.591+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T08:14:09.591+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T08:14:09.592+05:30  INFO 16624 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-10-10T08:18:17.921+05:30  INFO 16624 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T08:18:17.926+05:30  INFO 16624 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T08:18:21.310+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 3744 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T08:18:21.312+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T08:18:22.389+05:30  INFO 3744 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T08:18:22.405+05:30  INFO 3744 --- [Logging] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T08:18:22.406+05:30  INFO 3744 --- [Logging] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T08:18:22.465+05:30  INFO 3744 --- [Logging] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T08:18:22.466+05:30  INFO 3744 --- [Logging] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2025-10-10T08:18:22.939+05:30  INFO 3744 --- [Logging] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T08:18:22.949+05:30  INFO 3744 --- [Logging] [main] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.243 seconds (process running for 2.778)
+2025-10-10T08:18:27.242+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T08:18:27.242+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T08:18:27.243+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-10T08:18:27.272+05:30 ERROR 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : ERROR Logged
+2025-10-10T08:18:27.272+05:30  WARN 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : WARN logged
+2025-10-10T08:18:27.272+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-1] com.SpringLogging.Logging.Controller     : INFO logged
+2025-10-10T08:18:28.392+05:30 ERROR 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : ERROR Logged
+2025-10-10T08:18:28.392+05:30  WARN 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : WARN logged
+2025-10-10T08:18:28.392+05:30  INFO 3744 --- [Logging] [http-nio-8080-exec-2] com.SpringLogging.Logging.Controller     : INFO logged
+2025-10-10T12:08:53.183+05:30  INFO 3744 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T12:08:53.192+05:30  INFO 3744 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T12:08:58.749+05:30  INFO 27372 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 27372 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T12:08:58.753+05:30  INFO 27372 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T12:08:58.850+05:30  INFO 27372 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-10T12:08:58.850+05:30  INFO 27372 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-10T12:08:59.953+05:30  INFO 27372 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T12:08:59.979+05:30  INFO 27372 --- [Logging] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T12:08:59.979+05:30  INFO 27372 --- [Logging] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T12:09:00.031+05:30  INFO 27372 --- [Logging] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T12:09:00.032+05:30  INFO 27372 --- [Logging] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1181 ms
+2025-10-10T12:09:00.454+05:30  INFO 27372 --- [Logging] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-10T12:09:00.500+05:30  INFO 27372 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T12:09:00.516+05:30  INFO 27372 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.441 seconds (process running for 3.064)
+2025-10-10T12:31:01.717+05:30  INFO 27372 --- [Logging] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T12:31:01.718+05:30  INFO 27372 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T12:31:01.719+05:30  INFO 27372 --- [Logging] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-10T12:32:38.406+05:30  INFO 27372 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T12:32:38.412+05:30  INFO 27372 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T12:32:41.901+05:30  INFO 28028 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 28028 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T12:32:41.905+05:30  INFO 28028 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T12:32:41.991+05:30  INFO 28028 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-10T12:32:41.991+05:30  INFO 28028 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-10T12:32:43.086+05:30  INFO 28028 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T12:32:43.103+05:30  INFO 28028 --- [Logging] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T12:32:43.104+05:30  INFO 28028 --- [Logging] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T12:32:43.148+05:30  INFO 28028 --- [Logging] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T12:32:43.149+05:30  INFO 28028 --- [Logging] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1156 ms
+2025-10-10T12:32:43.619+05:30  INFO 28028 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T12:32:43.631+05:30  INFO 28028 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.31 seconds (process running for 2.867)
+2025-10-10T12:32:48.517+05:30  INFO 28028 --- [Logging] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T12:32:48.518+05:30  INFO 28028 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T12:32:48.520+05:30  INFO 28028 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-10-10T12:34:46.599+05:30  INFO 28028 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T12:34:46.605+05:30  INFO 28028 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T12:34:51.025+05:30  INFO 17580 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 17580 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T12:34:51.030+05:30  INFO 17580 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T12:34:51.113+05:30  INFO 17580 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-10T12:34:51.114+05:30  INFO 17580 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-10T12:34:52.334+05:30  INFO 17580 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T12:34:52.351+05:30  INFO 17580 --- [Logging] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T12:34:52.352+05:30  INFO 17580 --- [Logging] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T12:34:52.401+05:30  INFO 17580 --- [Logging] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T12:34:52.402+05:30  INFO 17580 --- [Logging] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1286 ms
+2025-10-10T12:34:52.916+05:30  INFO 17580 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T12:34:52.930+05:30  INFO 17580 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.492 seconds (process running for 3.074)
+2025-10-10T12:34:59.458+05:30  INFO 17580 --- [Logging] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-10T12:34:59.458+05:30  INFO 17580 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-10T12:34:59.459+05:30  INFO 17580 --- [Logging] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-10T12:36:20.413+05:30  INFO 17580 --- [Logging] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-10T12:36:20.419+05:30  INFO 17580 --- [Logging] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-10T12:36:23.595+05:30  INFO 14212 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Starting LoggingApplication using Java 25 with PID 14212 (F:\java_practice\Logging\target\classes started by user in F:\java_practice\Logging)
+2025-10-10T12:36:23.605+05:30  INFO 14212 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-10T12:36:23.686+05:30  INFO 14212 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-10T12:36:23.687+05:30  INFO 14212 --- [Logging] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-10T12:36:24.837+05:30  INFO 14212 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-10T12:36:24.851+05:30  INFO 14212 --- [Logging] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-10T12:36:24.852+05:30  INFO 14212 --- [Logging] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-10T12:36:24.890+05:30  INFO 14212 --- [Logging] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-10T12:36:24.890+05:30  INFO 14212 --- [Logging] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1202 ms
+2025-10-10T12:36:25.326+05:30  INFO 14212 --- [Logging] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-10T12:36:25.338+05:30  INFO 14212 --- [Logging] [restartedMain] c.S.Logging.LoggingApplication           : Started LoggingApplication in 2.328 seconds (process running for 2.864)
