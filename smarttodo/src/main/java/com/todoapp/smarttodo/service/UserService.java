@@ -21,7 +21,7 @@ public class UserService {
     }
 
     public Optional<User> findUserByUsername(String username){
-        return userRespository.findByUsername(username);
+        return userRespository.findByName(username);
        /* find (or get, read, query, etc.): The starting action keyword.
         By: The delimiter that indicates the start of the criteria (the WHERE clause).
                 Username: This must be the exact name of the field in your User entity, using CamelCase conventions.

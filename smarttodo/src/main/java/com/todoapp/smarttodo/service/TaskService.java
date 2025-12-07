@@ -16,12 +16,12 @@ public class TaskService {
         return taskRespository.save(Task);
     }
 
-    public Optional<Task> findTaskById(Long id){
+    public Optional<Task> findTaskByTaskId(Long id){
         return taskRespository.findById(id); // we need to convert id to int value and findBy will return
         // a type of Optional.
     }
 
-    public Optional<Task> findTaskByTaskName(String TaskName){
+    public Optional<Task> findTaskByTaskTitle(String TaskName){
         return taskRespository.findTaskByTaskName(TaskName);
        /* find (or get, read, query, etc.): The starting action keyword.
         By: The delimiter that indicates the start of the criteria (the WHERE clause).

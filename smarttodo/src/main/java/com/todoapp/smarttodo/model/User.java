@@ -6,19 +6,19 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //AUTO will generate user_seq table The key is to use the GenerationType.IDENTITY strategy.
-    private long userId;
+    private long userid;
     private String name;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;
 
-    public long getUserId() {
-        return userId;
+    public long getUserid() {
+        return userid;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUserid(long userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -48,7 +48,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + userId +
+                "id=" + userid +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

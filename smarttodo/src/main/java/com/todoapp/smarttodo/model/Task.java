@@ -9,7 +9,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // this will create task_seq table The key is to use the GenerationType.IDENTITY strategy.
     private int taskId;
-    private String title;
+    private String taskName;
 //    private String desc;
     private String description;
     private boolean isCompleted=false;
@@ -19,9 +19,9 @@ public class Task {
     @JoinColumn(name ="userId",nullable = false )
     private User user;*/
 
-    public Task(int taskId, String title, String description, boolean isCompleted, LocalDateTime createdAt) {
+    public Task(int taskId, String taskName, String description, boolean isCompleted, LocalDateTime createdAt) {
         this.taskId = taskId;
-        this.title = title;
+        this.taskName = taskName;
         this.description = description;
         this.isCompleted = isCompleted;
         this.createdAt = createdAt;
@@ -31,7 +31,7 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "taskId=" + taskId +
-                ", title='" + title + '\'' +
+                ", taskName='" + taskName + '\'' +
                 ", desc='" + description + '\'' +
                 ", isCompleted=" + isCompleted +
                 ", createdAt=" + createdAt +
@@ -46,12 +46,12 @@ public class Task {
         this.taskId = taskId;
     }
 
-    public String getTitle() {
-        return title;
+    public String gettaskName() {
+        return taskName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void settaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public String getDescription() {
