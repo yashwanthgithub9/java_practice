@@ -1,4 +1,4 @@
-package com.employees.project.Entity;
+package com.project.EmployeeMgt.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

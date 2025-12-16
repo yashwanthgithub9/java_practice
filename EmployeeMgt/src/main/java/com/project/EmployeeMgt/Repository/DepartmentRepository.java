@@ -1,6 +1,6 @@
-package com.employees.project.Repository;
+package com.project.EmployeeMgt.Repository;
 
-import com.employees.project.Entity.Department;
+import com.project.EmployeeMgt.Entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
