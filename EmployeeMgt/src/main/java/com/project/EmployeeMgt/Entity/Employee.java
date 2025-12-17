@@ -1,5 +1,6 @@
 package com.project.EmployeeMgt.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class Employee {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_id",nullable = false)
+    @JsonIgnore
     private Department department;
 
 }

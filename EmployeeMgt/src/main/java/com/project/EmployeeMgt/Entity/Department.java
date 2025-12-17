@@ -18,6 +18,6 @@ public class Department {
     private String deptName;
 
     @OneToMany(mappedBy = "department",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JsonIgnore        // <--- THE FIX: "Don't print this list in the JSON"
+//  @JsonIgnore        // <--- THE FIX: "Don't print this list in the JSON"
     List<Employee> employees;
 }

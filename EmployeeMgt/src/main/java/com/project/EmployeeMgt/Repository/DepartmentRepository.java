@@ -15,6 +15,13 @@ public interface DepartmentRepository extends JpaRepository<Department,Long> {
     // INTERVIEW GOLD (THE FIX):
     // "LEFT JOIN FETCH" forces Hibernate to load Employees in the SAME query.
     // Result: 1 Query total. Performance saved.
+
+    // THE EXPLANATION:
+    // SELECT d      -> "Give me the Department object"
+    // FROM Department d
+    // LEFT JOIN     -> "Match it with..."
+    // FETCH         -> "STAPLE the data right now (Load it into memory)"
+    // d.employees   -> "...the list of employees belonging to that department"
     @Query("select d from Department d LEFT JOIN FETCH d.employees")
     List<Department> findAllWithEmployees();
 }
