@@ -7,7 +7,9 @@ import com.project.EmployeeMgt.Repository.DepartmentRepository;
 import com.project.EmployeeMgt.Repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
@@ -38,4 +40,21 @@ public class EmployeeService {
     public List<Department> getDepartmentList(){
         return departmentRepository.findAllWithEmployees();
     }
+//    @PutMapping("{id}")
+    public Employee updateEmployee(Long id, EmployeeDTO employeeDTO){
+        Employee existingEmployee=employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Employee doesn't exist with id "+id+"please create"));
+        existingEmployee.setEmpSalary(employeeDTO.getSalary());
+        existingEmployee.setEmpName(employeeDTO.getName());
+        existingEmployee.setEmpMail(employeeDTO.getEmail());
+
+        if (employeeDTO.getDepartmentId()!=null){
+            Department department=departmentRepository.findById(employeeDTO.getDepartmentId()).orElseThrow(()->new RuntimeException("Department not found"));
+            existingEmployee.setDepartment(department);
+
+
+        }
+        return employeeRepository.save(existingEmployee);
+    }
+
+//    public Employee deleteEm
 }

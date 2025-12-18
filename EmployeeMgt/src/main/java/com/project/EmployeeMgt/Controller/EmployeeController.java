@@ -29,4 +29,12 @@ public class EmployeeController {
     public List<Department> getDepartmentList(){
         return employeeService.getDepartmentList();
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Employee> updateEmployeeResponseEntity(@PathVariable Long id, @Valid @RequestBody EmployeeDTO employeeDTO){
+        Employee employee = employeeService.updateEmployee(id,employeeDTO);
+
+        return new ResponseEntity<>(employee,HttpStatus.FOUND);
+
+    }
 }
