@@ -11,7 +11,6 @@ public class TaskService {
 
     @Autowired
     private TaskRepository taskRespository;
-
     public Task registerTask(Task Task){
         return taskRespository.save(Task);
     }

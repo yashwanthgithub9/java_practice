@@ -56,5 +56,10 @@ public class EmployeeService {
         return employeeRepository.save(existingEmployee);
     }
 
-//    public Employee deleteEm
+    public void deleteEmployee(long id){
+        if (!employeeRepository.existsById(id)){
+            throw new RuntimeException("Employee didn't found with id :"+id);
+        }
+        employeeRepository.deleteById(id);
+    }
 }
