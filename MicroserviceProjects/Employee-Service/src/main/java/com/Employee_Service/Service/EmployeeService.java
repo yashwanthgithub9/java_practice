@@ -1,5 +1,7 @@
 package com.Employee_Service.Service;
 
+import com.Employee_Service.Client.APIClient;
+import com.Employee_Service.DTO.DepartmentDTO;
 import com.Employee_Service.DTO.EmployeeDTO;
 //import com.project.EmployeeMgt.Entity.Department;
 import com.Employee_Service.Entity.Employee;
@@ -20,22 +22,33 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired
+    private APIClient apiClient;
+
 //    @Autowired
 //    private DepartmentRepository departmentRepository;
     @Transactional
     public Employee createEmployee(EmployeeDTO employeeDTO){
 
-//        Department department=departmentRepository.findById(employeeDTO.getDepartmentId())
-//                .orElseThrow(()->new RuntimeException("Department not found"));
+        DepartmentDTO department=apiClient.getDepartmentByID(employeeDTO.getDepartmentId());
        /* Department dept = departmentRepository.findById(employeeDTO.getDepartmentId())
                 .orElseThrow(() -> new RuntimeException("Department not found with ID: " + employeeDTO.getDepartmentId()));*/
         Employee employee = new Employee();
         employee.setEmpName(employeeDTO.getName());
         employee.setEmpMail(employeeDTO.getEmail());
         employee.setEmpSalary(employeeDTO.getSalary());
-//        employee.setDepartment(dept);
+        employee.setDepartmentId(employeeDTO.getDepartmentId());
 
-        return employeeRepository.save(employee);
+        Employee savedEmployee1= employeeRepository.save(employee);
+
+        EmployeeDTO employeeDTO1=new EmployeeDTO();
+        employeeDTO1.setName(savedEmployee1.getEmpName());
+        employeeDTO1.setEmail(savedEmployee1.getEmpMail());
+        employeeDTO1.setSalary(savedEmployee1.getEmpSalary());
+        employeeDTO1.setDepartmentId(savedEmployee1.getDepartmentId());
+
+        return savedEmployee1;
+
     }
 
 /*    public List<Department> getDepartmentList(){
@@ -64,10 +77,27 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    public Employee getEmployeeWithID(Long id){
+    public EmployeeDTO getEmployeeWithID(Long id){
     //public Optional<Employee> getEmployeeWithID(Long id){
 
         //By throwing exception we need to return type employee not Optional
-        return employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Employee with emp id not found"));
+        Employee employee= employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Employee with emp id not found"));
+
+        EmployeeDTO employeeDTO=new EmployeeDTO();
+        employeeDTO.setName(employee.getEmpName());
+        employeeDTO.setDepartmentId(employee.getDepartmentId());
+        employeeDTO.setSalary(employee.getEmpSalary());
+        employeeDTO.setEmail(employee.getEmpMail());
+        employeeDTO.setName(employee.getEmpName());
+
+        if (employee.getDepartmentId()!=null){
+            DepartmentDTO departmentDTO=apiClient.getDepartmentByID(employee.getDepartmentId());
+            employeeDTO.setDepartmentDTO(departmentDTO);
+        }
+
+        return employeeDTO;
+
     }
+
+
 }

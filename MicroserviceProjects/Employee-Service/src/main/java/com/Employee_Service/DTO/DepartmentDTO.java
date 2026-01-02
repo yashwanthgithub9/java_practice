@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter@Setter
 public class DepartmentDTO {
 
-    private Long id;
-    private String departmentName;
-    private String departmentCode;
+    private Long deptId;
+    private String deptName;
+    private String deptCode;
 }

@@ -1,4 +1,4 @@
-package com.project.EmployeeMgt.Entity;
+package com.Department_Service.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -16,8 +16,9 @@ public class Department {
     private long deptId;
     @Column(nullable = false,unique = true)
     private String deptName;
+    private String deptCode;
 
-    @OneToMany(mappedBy = "department",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-//  @JsonIgnore        // <--- THE FIX: "Don't print this list in the JSON"
-    List<Employee> employees;
+//    @OneToMany(mappedBy = "department",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+////  @JsonIgnore        // <--- THE FIX: "Don't print this list in the JSON"
+//    List<Employee> employees;
 }

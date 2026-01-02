@@ -19,8 +19,9 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Employee> createEmployeeResponseEntity(@Valid @RequestBody EmployeeDTO employeeDTO){
+//        Employee employee=new Employee();
         Employee employee=employeeService.createEmployee(employeeDTO);
         return new ResponseEntity<Employee>(employee, HttpStatus.CREATED);
     }
@@ -29,6 +30,14 @@ public class EmployeeController {
     public List<Department> getDepartmentList(){
         return employeeService.getDepartmentList();
     }*/
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EmployeeDTO> getEmployees(@PathVariable Long id){
+
+        EmployeeDTO employee=employeeService.getEmployeeWithID(id);
+
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+    }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Employee> updateEmployeeResponseEntity(@PathVariable Long id, @Valid @RequestBody EmployeeDTO employeeDTO){

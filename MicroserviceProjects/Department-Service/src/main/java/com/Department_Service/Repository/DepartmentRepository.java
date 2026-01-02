@@ -1,6 +1,6 @@
-package com.project.EmployeeMgt.Repository;
+package com.Department_Service.Repository;
 
-import com.project.EmployeeMgt.Entity.Department;
+import com.Department_Service.Entity.Department ;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -22,6 +22,6 @@ public interface DepartmentRepository extends JpaRepository<Department,Long> {
     // LEFT JOIN     -> "Match it with..."
     // FETCH         -> "STAPLE the data right now (Load it into memory)"
     // d.employees   -> "...the list of employees belonging to that department"
-    @Query("select d from Department d LEFT JOIN FETCH d.employees")
-    List<Department> findAllWithEmployees();
+/*    @Query("select d from Department d LEFT JOIN FETCH d.employees")
+    List<Department> findAllWithEmployees();*/
 }

@@ -18,5 +18,7 @@ public class EmployeeDTO {
     private Long salary;
     private Long departmentId;
 
+    private DepartmentDTO departmentDTO;
+
 }
 
