@@ -1,9 +1,9 @@
-package com.project.EmployeeMgt.Controller;
+package com.Employee_Service.Controller;
 
-import com.project.EmployeeMgt.DTO.EmployeeDTO;
-import com.project.EmployeeMgt.Entity.Department;
-import com.project.EmployeeMgt.Entity.Employee;
-import com.project.EmployeeMgt.Service.EmployeeService;
+import com.Employee_Service.DTO.EmployeeDTO;
+//import com.Employee_Service.Entity.Department;
+import com.Employee_Service.Entity.Employee;
+import com.Employee_Service.Service.EmployeeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,10 +25,10 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employee, HttpStatus.CREATED);
     }
 
-    @GetMapping("/departments")
+/*    @GetMapping("/departments")
     public List<Department> getDepartmentList(){
         return employeeService.getDepartmentList();
-    }
+    }*/
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Employee> updateEmployeeResponseEntity(@PathVariable Long id, @Valid @RequestBody EmployeeDTO employeeDTO){

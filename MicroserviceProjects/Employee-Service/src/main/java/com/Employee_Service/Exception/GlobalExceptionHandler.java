@@ -1,6 +1,6 @@
-package com.project.EmployeeMgt.Exception;
+package com.Employee_Service.Exception;
 
-import org.springframework.dao.DataIntegrityViolationException;
+//import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,7 +13,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
+/*    @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<Map<String,String>> handleSQLDulicates(DataIntegrityViolationException exception){
 
         Map<String,String> responce=new HashMap<>();
@@ -21,6 +21,6 @@ public class GlobalExceptionHandler {
         responce.put("message","Email already exists, try new email");
 
         return new ResponseEntity<>(responce, HttpStatus.BAD_REQUEST);
-    }
+    }*/
 
 }

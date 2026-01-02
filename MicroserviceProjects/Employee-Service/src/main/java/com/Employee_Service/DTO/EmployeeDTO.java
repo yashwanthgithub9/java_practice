@@ -1,4 +1,4 @@
-package com.project.EmployeeMgt.DTO;
+package com.Employee_Service.DTO;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;

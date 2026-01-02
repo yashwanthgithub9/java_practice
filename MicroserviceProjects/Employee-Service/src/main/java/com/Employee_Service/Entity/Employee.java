@@ -1,4 +1,4 @@
-package com.project.EmployeeMgt.Entity;
+package com.Employee_Service.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -17,9 +17,11 @@ public class Employee {
     private String empMail;
     private long empSalary;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    private Long departmentId;
+
+/*    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_id",nullable = false)
     @JsonIgnore
-    private Department department;
+    private Department department;*/
 
 }
