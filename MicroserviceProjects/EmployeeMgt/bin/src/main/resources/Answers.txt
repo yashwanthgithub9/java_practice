@@ -1,0 +1,28 @@
+Q: Now let me tell you what I understood from the below lines
+when(departmentRepository.findAllWithEmployees()).thenReturn(mockList);
+List<Department> results=employeeService.getDepartmentList();
+1st line is when we tell when we get a call to findAllWithEmployees we need to fetch it from mocklist,
+2nd one is when we actually make a call to service layer and it asks repo layer to fetch all departments, then this mock will say hey we already have a condition to call mock when repo is called so i'm returning you the mock data
+
+Answer from Gemini:
+You hit the nail on the head. 🔨
+Your understanding is 100% correct.
+Line 1 (when): You are Pre-loading the answer. You are telling the Mock: "If anyone asks this question later, here is the answer you must give."
+Line 2 (service.call): You run the code. The Service runs, hits the Repository, and the Mock intercepts that call (like a goalkeeper) and hands over the pre-loaded answer instead of letting it go to the database.
+You have officially graduated from "Copying Code" to "Understanding Architecture." 🎓
+
+
+Q: and If we swap those line that is when service call list for departments as when and then is not defined till that point it will call repo which will make the actual call to database
+A:You are asking exactly the right questions to probe the boundaries of how this works.
+You are half right and half wrong, and the distinction is very important.
+If you swap the lines so the Execution happens before the Script, this happens:
+1. You are RIGHT: The Script won't work ❌If you call service.getAllDepartments() before you write the when(...) line, the Mock has no idea what to do. It hasn't read the script yet.
+2. You are WRONG: It will NOT call the Database 🛑This is the key magic of @Mock.Even if you give it no instructions, a Mock object is physically incapable of calling the database. It has been lobotomized. It has no connection strings, no passwords, nothing.
+So, what actually happens?If a Mock has no script (when clause), it returns Defaults:If the method returns a List, it returns an Empty List [].If the method returns an Object, it returns null.If the method returns an int, it returns 0.
+The "Time Travel" ProblemImagine this timeline if you swap the lines:
+Line 1 (Execution): service.getAllDepartments() is called.Service asks Repo: "Give me departments."Repo (Mock) says: "I have no script... so here is an Empty List."Result: Variable results is empty.
+Line 2 (The Script): when(repo...).thenReturn(mockList)You yell at the actor: "Hey! When you were asked 5 seconds ago, you should have said 'IT Mock Dept'!"Actor: "Too late. Scene is over."
+Line 3 (Verify): assertEquals(1, results.size())FAIL: Expected 1, but got 0 (Empty List).
+Summary
+Real Repo: Without instructions $\rightarrow$ Calls Database.
+Mock Repo: Without instructions $\rightarrow$ Returns Null/Empty (Zombie Mode).
