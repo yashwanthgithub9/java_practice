@@ -1,0 +1,30 @@
+server:
+  port: 9191 # The new "Main Entrance" port
+
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    gateway:
+      routes:
+        # Route 1: Employee Service
+        - id: EMPLOYEE-SERVICE
+          uri: lb://EMPLOYEE-SERVICE  # "lb" stands for Load Balancer
+          predicates:
+            - Path=/employees/**, /employee/** # Matches requests starting with these paths
+
+        # Route 2: Department Service
+        - id: DEPARTMENT-SERVICE
+          uri: lb://DEPARTMENT-SERVICE
+          predicates:
+            - Path=/departments/**
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
