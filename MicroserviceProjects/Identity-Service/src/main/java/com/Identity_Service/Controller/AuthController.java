@@ -2,6 +2,7 @@ package com.Identity_Service.Controller;
 
 
 import com.Identity_Service.Entity.UserCredential;
+import com.Identity_Service.Repository.UserCredentialRepository;
 import com.Identity_Service.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,10 +18,13 @@ public class AuthController {
     private AuthService authService;
 
     @Autowired
+    private UserCredentialRepository userCredentialRepository;
+
+    @Autowired
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
-    public String addUser(UserCredential credential){
+    public String addUser(@RequestBody UserCredential credential){
         System.out.println("User received: " + credential.toString());
         return authService.saveUser(credential);
 
@@ -28,13 +32,24 @@ public class AuthController {
 
     @PostMapping("/token")
     public String getToken(@RequestBody UserCredential userCredential){
-        Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userCredential.getName(),userCredential.getPassword()));
+        System.out.println("LOGIN ATTEMPT: " + userCredential.getName()); // <--- Add this!
+        try {
+            System.out.println("LOGIN ATTEMPT: " + userCredential.getPassword());
+//            Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userCredential.getName(),userCredentialRepository.findByName(userCredential.getName()).get().getPassword()));
+            Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userCredential.getName(),userCredential.getPassword()));
 
-        if (authentication.isAuthenticated()){
-            return authService.generateToken(userCredential.getName());
+            if (authentication.isAuthenticated()){
+                return authService.generateToken(userCredential.getName());
+            }
+            else
+                throw new RuntimeException("No Access");
+        } catch (Exception e) {
+            // THIS IS THE KEY: Print the real error
+            System.out.println("!!! LOGIN ERROR !!! : " + e.getMessage());
+            e.printStackTrace(); // Print the full error to console
+//            throw e;
+            throw e;
         }
-        else
-            throw new RuntimeException("No Access");
     }
 
     @GetMapping("/validate")

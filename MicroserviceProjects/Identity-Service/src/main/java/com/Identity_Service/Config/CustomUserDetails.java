@@ -9,20 +9,31 @@ import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 
+    private String username;
+    private String password;
 
+    // Constructor: Converts YOUR Entity -> SPRING Object
+    public CustomUserDetails(UserCredential userCredential) {
+        this.username = userCredential.getName();
+        this.password = userCredential.getPassword();
+
+        // DEBUG: Print what we are loading
+        System.out.println("DEBUG CustomUserDetails: Loaded User -> " + this.username);
+        System.out.println("DEBUG CustomUserDetails: Loaded Password -> " + this.password);
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return java.util.Collections.emptyList(); // Return empty list instead of null
     }
 
     @Override
     public String getPassword() {
-        return "";
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return username;
     }
 
     @Override
@@ -46,12 +57,5 @@ public class CustomUserDetails implements UserDetails {
     }
 
 
-    private String username;
-    private String password;
 
-    // Constructor: Converts YOUR Entity -> SPRING Object
-    public CustomUserDetails(UserCredential userCredential) {
-        this.username = userCredential.getName();
-        this.password = userCredential.getPassword();
-    }
 }

@@ -1,41 +1,38 @@
 package com.Identity_Service.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @Entity
 public class UserCredential {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String email;
-    private String password;
 
-    public int getId() {
-        return id;
-    }
+    @JsonProperty("name")      // FORCE mapping to "name"
+    private String name;
+
+    @JsonProperty("email")     // FORCE mapping to "email"
+    private String email;
+
+    @JsonProperty("password")  // FORCE mapping to "password"
+    private String password;
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setEmail(String email) {
@@ -43,12 +40,8 @@ public class UserCredential {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
-        System.out.println("INSIDE SETTER: Setting password to " + password); // <--- Add this
+        System.out.println("DEBUG CHECK: Spring is asking for password. I am returning:" + password); // <--- Add this
         this.password = password;
     }
 
