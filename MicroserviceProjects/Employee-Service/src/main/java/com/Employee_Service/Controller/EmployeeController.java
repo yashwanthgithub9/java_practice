@@ -51,4 +51,9 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return ResponseEntity.ok("Employee with id :"+id+" deleted");
     }
+
+    @GetMapping("/welcome")
+    public String welcomeEmployee(){
+        return "Welcome to employee endpoint";
+    }
 }
