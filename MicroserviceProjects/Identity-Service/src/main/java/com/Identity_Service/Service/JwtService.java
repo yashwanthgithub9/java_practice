@@ -54,7 +54,7 @@ public class JwtService {
         Jwts.parserBuilder()//Start the verification machine
                 .setSigningKey(getSignKey())//Load the official stamp
                 .build()//Turn the machine on
-                .parseClaimsJwt(token);//Scan this specific token now
+                .parseClaimsJws(token);//Scan this specific token now
 
     }
 
