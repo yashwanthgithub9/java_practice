@@ -7,11 +7,18 @@ spring:
   cloud:
     gateway:
       routes:
+        # IDENTITY SERVICE (OPEN TO EVERYONE - No Filter)
+        - id: IDENTITY-SERVICE
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**
         # Route 1: Employee Service
         - id: EMPLOYEE-SERVICE
           uri: lb://EMPLOYEE-SERVICE  # "lb" stands for Load Balancer
           predicates:
-            - Path=/employees/**, /employee/** # Matches requests starting with these paths
+            - Path=/employee/** # Matches requests starting with these paths
+          filters:
+            - AuthenticationFilter # <--- THIS ACTIVATES YOUR JAVA CODE
 
         # Route 2: Department Service
         - id: DEPARTMENT-SERVICE
