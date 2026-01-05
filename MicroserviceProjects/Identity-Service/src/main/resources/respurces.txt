@@ -1,0 +1,14 @@
+f a hacker changes "Yashwanth" to "Admin" inside the token,
+the Wax Seal (Signature) shatters.
+Why? The Math Behind the MagicThe signature isn't just a random stamp.
+It is calculated using a strict formula:
+$$Signature = Hash(Header + Payload + SecretKey)
+$$Original Token:Payload: "Yashwanth"Secret:
+"MySecretKey"Result: Signature "ABC"
+Hacked Token:Payload: "Admin" (Changed!)Secret: "MySecretKey" (Hacker doesn't know this, so he can't calculate a new signature).
+Result: The math requires the signature to be "XYZ".Reality:
+The token still has the old signature "ABC".
+The Validation (parseClaimsJws):The system runs the math: "For payload 'Admin', I expect signature 'XYZ'."It looks at the token: "This token has signature 'ABC'.
+"Mismatch! -> CRASH (SignatureException).
+This is why JWTs are so powerful.
+You can hand them to the client (browser), and you don't have to worry about them cheating.
