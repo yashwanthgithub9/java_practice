@@ -12,3 +12,10 @@ The Validation (parseClaimsJws):The system runs the math: "For payload 'Admin', 
 "Mismatch! -> CRASH (SignatureException).
 This is why JWTs are so powerful.
 You can hand them to the client (browser), and you don't have to worry about them cheating.
+
+
+The AuthConfig class is the configuration center. It tells Spring Security:
+
+"Use my custom logic" (UserDetailsService) instead of the default logic.
+
+"Use this Password Encoder" (BCrypt) to encrypt passwords.

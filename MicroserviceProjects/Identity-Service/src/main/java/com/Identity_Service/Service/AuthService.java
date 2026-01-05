@@ -21,7 +21,7 @@ public class AuthService {
 
     //Save User
 
-    private String saveUser(UserCredential credential){
+    public String saveUser(UserCredential credential){
 
         credential.setPassword(passwordEncoder.encode(credential.getPassword()));
         userCredentialRepository.save(credential);
@@ -34,5 +34,10 @@ public class AuthService {
     public String generateToken(String name){
 
         return jwtService.generateToken(name);
+    }
+
+    // Add this to AuthService.java
+    public void validateToken(String token) {
+        jwtService.validateJwt(token);
     }
 }
