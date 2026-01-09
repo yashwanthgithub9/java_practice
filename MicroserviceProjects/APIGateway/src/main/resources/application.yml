@@ -19,6 +19,11 @@ spring:
             - Path=/employee/** # Matches requests starting with these paths
           filters:
             - AuthenticationFilter # <--- THIS ACTIVATES YOUR JAVA CODE
+            - name: CircuitBreaker #This activates the Resilience 4j logic.
+              args:
+                name: EMPLOYEE-SERVICE-BREAKER
+                fallbackUri: forward:/fallback/employee #This tells the Gateway,
+                #"If the service fails, don't crash. Just go to this URL instead."
 
         # Route 2: Department Service
         - id: DEPARTMENT-SERVICE
