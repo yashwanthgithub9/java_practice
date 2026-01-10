@@ -1,0 +1,52 @@
+Here is your complete Kafka (KRaft Mode) Setup Guide for Windows. You can copy-paste this into a text file or Notion page for future reference.
+This guide assumes you are using Kafka 4.x (which does not use Zookeeper).
+
+1. Download & Install
+Download:
+Go to Apache Kafka Downloads.
+Download the Binary downloads version (e.g., Scala 2.13).
+Extract (The "Short Path" Rule):
+Extract the folder to your C: Drive.
+Rename the folder to kafka.
+Final Path must be: C:\kafka
+
+2. Configuration (Do this once)
+Open C:\kafka\config\server.properties in Notepad/IntelliJ.
+Find the line log.dirs.
+Change it to:
+Properties
+log.dirs=C:/kafka/kafka-logs
+Save and close.
+
+3. Initialize Storage (Do this ONLY once)
+This formats the directory. You only do this the very first time you install Kafka.
+Open Command Prompt.
+Run these commands:
+DOS
+cd C:\kafka
+.\bin\windows\kafka-storage.bat random-uuid
+(Copy the UUID code it gives you, e.g., M1xY...)
+Run the format command (replace <UUID> with your code):
+DOS
+.\bin\windows\kafka-storage.bat format -t <UUID> -c .\config\server.properties
+Success Message: Formatting dynamic metadata voter directory...
+
+4. Daily Startup (Run this every time)
+Whenever you want to work on your project, do this.
+Open Command Prompt.
+Run:
+DOS
+cd C:\kafka
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+Keep this window OPEN. If you close it, Kafka stops.
+
+5. Verify It Works
+Open a NEW Command Prompt window to test.
+Create a Topic:
+DOS
+cd C:\kafka
+.\bin\windows\kafka-topics.bat --create --topic test-topic --bootstrap-server localhost:9092
+List Topics:
+DOS
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+If you see test-topic, you are ready to code! 🚀
