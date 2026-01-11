@@ -4,6 +4,7 @@ package com.Identity_Service.Controller;
 import com.Identity_Service.Entity.UserCredential;
 import com.Identity_Service.Repository.UserCredentialRepository;
 import com.Identity_Service.Service.AuthService;
+import com.Identity_Service.Service.KafkaPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,6 +23,9 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private KafkaPublisher kafkaPublisher;
 
     @PostMapping("/register")
     public String addUser(@RequestBody UserCredential credential){
@@ -57,6 +61,12 @@ public class AuthController {
 
         authService.validateToken(token);
         return "Toke Validated";
+    }
+
+    @GetMapping("/topic/{message}")
+    public String testKafka(@PathVariable String message){
+        kafkaPublisher.sendMessage(message);
+        return "Success message sent from kafka";
     }
 
 

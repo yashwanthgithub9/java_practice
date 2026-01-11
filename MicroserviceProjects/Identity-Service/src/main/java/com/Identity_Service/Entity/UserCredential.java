@@ -6,13 +6,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
+//import lombok.Data;
+//import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
 @Entity
 public class UserCredential {
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
