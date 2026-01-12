@@ -1,5 +1,6 @@
 package com.Identity_Service.Service;
 
+import com.Identity_Service.Config.CustomUserEvents;
 import com.Identity_Service.Entity.UserCredential;
 import com.Identity_Service.Repository.UserCredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
+    @Autowired
+    private KafkaPublisher kafkaPublisher;
 
     //Save User
 
@@ -25,7 +28,15 @@ public class AuthService {
 
         credential.setPassword(passwordEncoder.encode(credential.getPassword()));
         userCredentialRepository.save(credential);
+
+        CustomUserEvents customUserEvents = new CustomUserEvents();
+        customUserEvents.setUsername(credential.getName());
+        customUserEvents.setEmail(credential.getEmail());
+        kafkaPublisher.sendMessage(customUserEvents);
+
         return "User Saved";
+
+
 
     }
 

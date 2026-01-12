@@ -70,7 +70,7 @@ public class AuthController {
         return "Success message sent from kafka";
     }*/
 
-    @GetMapping("/topic/{name}")
+/*    @GetMapping("/topic/{name}")
     public String testKafka(@PathVariable String name){
 
         // Create the dummy object
@@ -80,7 +80,7 @@ public class AuthController {
         kafkaPublisher.sendMessage(customUserEvents);
 
         return "Success : Message sent from kafka";
-    }
+    }*/
 
 
 }

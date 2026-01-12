@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class KafkaPublisher {
 
     @Autowired
-    private KafkaTemplate<String,String> kafkaTemplate;
+    private KafkaTemplate<String,Object> kafkaTemplate;
 /*
     public void sendMessage(String message){
         kafkaTemplate.send("test-topic",message);
