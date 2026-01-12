@@ -1,6 +1,7 @@
 package com.Identity_Service.Controller;
 
 
+import com.Identity_Service.Config.CustomUserEvents;
 import com.Identity_Service.Entity.UserCredential;
 import com.Identity_Service.Repository.UserCredentialRepository;
 import com.Identity_Service.Service.AuthService;
@@ -63,10 +64,22 @@ public class AuthController {
         return "Toke Validated";
     }
 
-    @GetMapping("/topic/{message}")
+/*    @GetMapping("/topic/{message}")
     public String testKafka(@PathVariable String message){
         kafkaPublisher.sendMessage(message);
         return "Success message sent from kafka";
+    }*/
+
+    @GetMapping("/topic/{name}")
+    public String testKafka(@PathVariable String name){
+
+        // Create the dummy object
+        CustomUserEvents customUserEvents = new CustomUserEvents();
+        customUserEvents.setUsername(name);
+        customUserEvents.setEmail(name+"@gamil.com");
+        kafkaPublisher.sendMessage(customUserEvents);
+
+        return "Success : Message sent from kafka";
     }
 
 
