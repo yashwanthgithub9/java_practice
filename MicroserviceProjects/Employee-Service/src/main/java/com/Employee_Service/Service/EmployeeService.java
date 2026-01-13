@@ -9,6 +9,7 @@ import com.Employee_Service.Entity.Employee;
 import com.Employee_Service.Repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -77,9 +78,10 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
+    @Cacheable(value = "employees", key = "#id")
     public EmployeeDTO getEmployeeWithID(Long id){
     //public Optional<Employee> getEmployeeWithID(Long id){
-
+        System.out.println("⚠️ GOING TO DATABASE for ID: " + id); // Debug log
         //By throwing exception we need to return type employee not Optional
         Employee employee= employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Employee with emp id not found"));
 

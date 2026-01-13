@@ -1,0 +1,31 @@
+1.Start Kafka in C:\kafka folder
+    .\bin\windows\kafka-server-start.bat .\config\server.properties
+2.Start Redis from downloads --> Redis -> Start redis.server.exe
+3.Start service-registry
+4.Start API Gateway
+5.Start Identity Service
+6.Start Employee-Service and Department-Service(if any)
+
+7.POST : http://localhost:9898/auth/register --> To save user
+{
+    "name": "YashwanthReddyl",
+    "email": "real@gmail.com",
+    "password": "password123"
+}
+8. POST : http://localhost:9898/auth/token --> To get token
+{
+    "name": "YashwanthReddyl",
+    "email": "real@gmail.com",
+    "password": "password123"
+}
+9. GET:http://localhost:9191/employee/1 --> To fetch Employee
+    --> Select Auth
+        -->Auth Type : Bearer Token
+        -->Token : Paste the token from Step 8
+10.Redis Validation
+    --> redis-cli.exe
+        -->enter KEYS *
+        --> It should return employee::1 (@Cacheable(value = "employees", key = "#id")
+    --> Postman response time
+        -->First : Around 23ms(direct hit to h2-console)
+        -->Second: Around 15ms(hitting redis cache)

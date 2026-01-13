@@ -6,8 +6,10 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Setter @Getter
-public class EmployeeDTO {
+public class EmployeeDTO implements Serializable {
 
     @NotBlank(message = "Should Not be empty")
     private String name;
