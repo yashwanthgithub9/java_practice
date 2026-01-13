@@ -29,3 +29,16 @@
     --> Postman response time
         -->First : Around 23ms(direct hit to h2-console)
         -->Second: Around 15ms(hitting redis cache)
+
+11.Docker:
+    Docker Image Creation
+    --> Create Dockerfile with following texts
+        FROM eclipse-temurin:17-jdk-alpine
+        VOLUME /tmp
+        COPY target/Identity-Service-0.0.1-SNAPSHOT.jar app.jar(Use SNAPSHOT name from below step)
+        ENTRYPOINT ["java", "-jar", "/app.jar"]
+    --> Open Docker Desktop(Docker Engine should run)
+    --> Run Lifecycle $\rightarrow$ clean and package for all three projects.(It will create SNAPSHOT name)
+    --> docker version
+    --> docker build -t identity-service:latest .
+    --> Check Docker Desktop it should show that image in it
