@@ -1,0 +1,103 @@
+version: '3.8'
+networks:
+  microservices-net:
+    driver: bridge
+services:
+  # 1. Zookeeper (Required for Kafka)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "22181:2181"
+    networks:
+      - microservices-net
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # This allows both Docker containers AND your localhost (Postman) to talk to Kafka
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - microservices-net
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - microservices-net
+  # 4. Zipkin (Tracing - Optional but good to have)
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - microservices-net
+  service-registry:
+    image: service-registry:latest
+    container_name: service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-net
+  identity-service:
+    image: identity-service:latest
+    container_name: identity-service
+    ports:
+      - "9898:9898"
+    environment:
+       # Overriding localhost with container names!
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    depends_on:
+      - service-registry
+      - kafka
+    networks:
+      - microservices-net
+  employee-service:
+    image: employee-service:latest
+    container_name: employee-service
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
+        # Pointing to the 'redis' container, not localhost
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
+        # Pointing to the 'kafka' container
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - MANAGEMENT_ZIPKIN_TRACING_ENDPOINT=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - service-registry
+      - kafka
+      - redis
+    networks:
+      - microservices-net
+  api-gateway:
+    image: api-gateway:latest
+    container_name: api-gateway
+    ports:
+      - "9191:9191"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    depends_on:
+      - service-registry
+      - employee-service
+      - identity-service
+    networks:
+      - microservices-net
+

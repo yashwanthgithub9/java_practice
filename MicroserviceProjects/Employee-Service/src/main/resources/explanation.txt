@@ -81,3 +81,10 @@ You mentioned: "send credentials to kafka"
 Correction: We are sending the User Profile (Username + Email).
 Remind: We explicitly do not send the password (credentials) to Kafka or Employee Service. Employee Service just needs to know who the person is, not their password.
 Verdict: You have fully grasped the core architectural benefit. You have successfully decoupled your services! 🚀
+
+After Docker Setup:
+once everything was up i tried registering,
+took token and tried logging in without token it flashed 500 error,
+then i realised i missed auth token and tried GET then it threw OOPS message( the circuit breaker one)
+then i tried after 10 sec it worked it pulled the data in 66ms,
+then again i tried GET for 4-5 times it pulled in range of 19-22ms, its magic
