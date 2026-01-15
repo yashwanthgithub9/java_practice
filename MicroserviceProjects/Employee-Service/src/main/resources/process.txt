@@ -42,3 +42,16 @@
     --> docker version
     --> docker build -t identity-service:latest .
     --> Check Docker Desktop it should show that image in it
+12. Docker compose(Containerization)
+    --> create a docker-compose.yml file with all services(zookeeper, kafka, redis, zipkin, all 4 microservices)
+    --> docker-compose up (it will fire up the compose file and will containerize all images and bring it up)
+        --> this could take time
+        --> below option could be a good way
+            --> Half Docker(zookeeper,redis,kafka,zipkin) (docker-infra.yml)
+            --> Half IntelliJ (4 microservices)
+        --> docker-compose -f docker-infra.yml up --> fires 1st half of docker
+        --> then manually start other 4 microservices
+        Scenario	Command	Use Case
+        "I want to code"	docker-compose -f infra.yml up	Daily Dev. Database/Queue runs in background. You code in Java. Fast.
+        "I want to demo"	docker-compose up	Showcase. Runs everything as a sealed package. Good for final testing.
+        "Reset Everything"	docker-compose down	Cleanup. Kills containers and networks.
