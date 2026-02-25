@@ -3,11 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Functional from './components/FunctionComp'
 import ClassCompo from './components/ClassBasedComp'
+import { JSXComp } from './JSX/JsxComp'
 
 const virtualRoot = createRoot(document.getElementById('root'))
 virtualRoot.render(
   <StrictMode>
     <Functional/>
     <ClassCompo/>
+    <JSXComp/>
   </StrictMode>,
 )
