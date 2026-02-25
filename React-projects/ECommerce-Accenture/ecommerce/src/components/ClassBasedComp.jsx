@@ -4,6 +4,15 @@ export default class ClassCompo extends React.Component{
     state={
         count:0
     }
+    componentDidMount(){
+        console.log("Mounted")
+    }
+    componentDidUpdate(){
+        console.log("Something updated")
+    }
+    componentWillUnmount(){
+        console.log("Un-Mounted")
+    }
     render(){
         return(
             <>
