@@ -15,14 +15,39 @@
   <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
 
   <script type="text/babel">
-    function ChatInput() {
+    function ChatInput({chatMessages,setChatMessages}) {
+      const [inputText, setInputText]=React.useState('');
+      function saveInputText(event) {
+        // console.log(event.target.value)
+        setInputText(event.target.value);
+      }
+
+      function sendMessage(event) {
+          console.log(inputText);
+                  setChatMessages(
+          [
+            ...chatMessages,
+            {// this is added at the end of current message
+              // if we just push its state won't change, hence it can't update UI
+              message:inputText,
+              sender:'user',
+              id:crypto.randomUUID()
+            }
+          ]
+        )
+        console.log(chatMessages)
+      }
       return (
         < >
           <input
             placeholder="Send message to chat bot"
-            size="25">
+            size="25"
+            onChange={saveInputText}
+            >
           </input>
-          <button>Send</button>
+          <button
+            onClick={sendMessage}
+          >Send</button>
         </>
       );
     }
@@ -50,8 +75,48 @@
         </div>
       );
     }
-    function ChatMessages(){
-      const array = React.useState([{
+    function ChatMessages({chatMessages}){
+
+      // const chatMessages=array[0];
+      // const setChatMessages=array[1];
+      // const [chatMessages, setChatMessages]=array;
+      // function sendMessage(){
+      //   // console.log('Message sent to console')
+      //   // chatMessages.push({
+      //   //   message:'test',
+      //   //   sender:'user',
+      //   //   id:crypto.randomUUID()
+      //   // });
+      //   setChatMessages(
+      //     [
+      //       ...chatMessages,
+      //       {// this is added at the end of current message
+      //         // if we just push its state won't change, hence it can't update UI
+      //         message:'test state',
+      //         sender:'user',
+      //         id:crypto.randomUUID()
+      //       }
+      //     ]
+      //   )
+      //   console.log(chatMessages)
+      // };
+      
+      return(
+        <>
+          {chatMessages.map((chat)=>{
+            return(
+            <ChatMessage 
+              message={chat.message}
+              sender={chat.sender}
+              key={chat.id}
+            />
+        );
+      })}
+      </>
+      );
+    }
+    function App() {
+      const [chatMessages, setChatMessages] = React.useState([{
         message:'Hellooo Chatbot',
         sender:'user',
         id:'id1'
@@ -68,51 +133,15 @@
         sender:'robot',
         id:'id4'
       }]);
-
-      const chatMessages=array[0];
-      const setChatMessages=array[1];
-
-      function sendMessage(){
-        // console.log('Message sent to console')
-        // chatMessages.push({
-        //   message:'test',
-        //   sender:'user',
-        //   id:crypto.randomUUID()
-        // });
-        setChatMessages(
-          [
-            ...chatMessages,
-            {// this is added at the end of current message
-              // if we just push its state won't change, hence it can't update UI
-              message:'test state',
-              sender:'user',
-              id:crypto.randomUUID()
-            }
-          ]
-        )
-        console.log(chatMessages)
-      };
-      
       return(
         <>
-          <button onClick={sendMessage}>Send Message</button>
-          {chatMessages.map((chat)=>{
-            return(
-            <ChatMessage 
-              message={chat.message}
-              sender={chat.sender}
-              key={chat.id}
-            />
-        );
-      })}
-      </>
-      );
-    }
-    function App() {
-      return(
-        <>
-        <ChatInput />
-        <ChatMessages/>
+        <ChatInput 
+          chatMessages={chatMessages}
+          setChatMessages={setChatMessages}
+        />
+        <ChatMessages
+          chatMessages={chatMessages}
+        />
         </>
       );
     }
