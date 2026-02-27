@@ -1,7 +1,6 @@
- import { useEffect, useRef } from "react";
- import { ChatMessage } from './ChatMessage.jsx';
-
- export function ChatMessages({chatMessages}){
+import { useEffect, useRef } from "react";
+import { ChatMessage } from './ChatMessage.jsx';
+export function ChatMessages({chatMessages}){
       const chatMsgRef=useRef(null);
       useEffect(()=>{
         // console.log(chatMsgRef.current);
@@ -20,6 +19,7 @@
             <ChatMessage 
               message={chat.message}
               sender={chat.sender}
+              time={chat.time}
               key={chat.id}
             />
         );

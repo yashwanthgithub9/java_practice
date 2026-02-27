@@ -118,3 +118,20 @@ button:hover{
     scroll-behavior:smooth;
     
 }
+.chat-time-user,.chat-time-robot {
+  font-size: 14px;
+  color: rgb(125, 125, 125);
+  margin-top: 5px;
+
+}
+
+.chat-time-robot{
+  display: flex;
+  justify-content: left;
+}
+
+.chat-time-user{
+
+  display: flex;
+  justify-content: right;
+}

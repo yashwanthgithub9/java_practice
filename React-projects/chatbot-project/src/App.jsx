@@ -7,24 +7,29 @@ import './App.css';
 import { ChatInput } from './components/ChatInput';
 
 import { ChatMessages } from './components/ChatMessages';
-
+import dayjs from 'dayjs';
 function App() {
   const [chatMessages, setChatMessages] = useState([{
         message:'Hellooo Chatbot',
         sender:'user',
-        id:'id1'
+        id:'id1',
+        time: dayjs().valueOf()
       },{
         message:'Hellooo User',
         sender:'robot',
-        id:'id2'
+        id:'id2',
+        time: dayjs().valueOf()
+
       },{
         message:'Get me Todays date',
         sender:'user',
-        id:'id3'
+        id:'id3',
+        time: dayjs().valueOf()
       },{
         message:'Hellooo Chatbot',
         sender:'robot',
-        id:'id4'
+        id:'id4',
+        time: dayjs().valueOf()
       }]);
       return(
         <div className="app-container">

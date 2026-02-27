@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {Chatbot} from 'supersimpledev';
-
+import dayjs from "dayjs";
 export function ChatInput({chatMessages,setChatMessages}) {
       const [inputText, setInputText]=useState('');
       function saveInputText(event) {
@@ -16,7 +16,8 @@ export function ChatInput({chatMessages,setChatMessages}) {
               // if we just push its state won't change, hence it can't update UI
               message:inputText,
               sender:'user',
-              id:crypto.randomUUID()
+              id:crypto.randomUUID(),
+              time: dayjs().valueOf()
             }
           ]
           setChatMessages(newChatMessages)
@@ -29,7 +30,8 @@ export function ChatInput({chatMessages,setChatMessages}) {
               // if we just push its state won't change, hence it can't update UI
               message:respose,
               sender:'robot',
-              id:crypto.randomUUID()
+              id:crypto.randomUUID(),
+              time: dayjs().valueOf()
             }
           ]
         )
