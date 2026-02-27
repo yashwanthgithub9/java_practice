@@ -21,22 +21,39 @@
           </>
       ); 
     }
+    function ChatMessage({message, sender}){ //destructuring at parameter level
+      // console.log(props);
+      // const msg =props.message;
+      // const sender = props.sender;
+      // const {msg,sender}=props; --> msg worked when creating a const but it wont
+      // work with object inside props;
+      // const {message,sender}=props; //destructuring
 
-    function ChatMessage(){
+      // if (sender=="robot") {
+      //   return(
+      //             <div>
+      //   <img src="./robot.png" width="30"></img>
+      //   {message}
+      //   </div> 
+      //   )
+      // }
       return(
         <div>
-        Hello ChatBot
-        <img src="./user.png" width="50"></img>
+          {sender==='robot' && <img src="./robot.png" width="30"/>}
+          {message}
+          {sender==='user' && <img src="./user.png" width="30"/>}
         </div> 
       ); 
     }
-
-    
-
     const app=(
       <>
       <ChatInput/> 
-      <ChatMessage/>
+      <ChatMessage message="Hellooo Chatbot" sender="user"/>
+      <ChatMessage message="Hellooo User" sender="robot"/>
+      <ChatMessage message="Get me Todays date" sender="user"/>
+      <ChatMessage message="February 26" sender="robot"/>
+
+
       </>
     )
       const container=document.querySelector('.js-container');
