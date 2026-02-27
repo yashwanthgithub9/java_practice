@@ -3,11 +3,6 @@
 
 <head>
   <title>ChatBot</title>
-  <style>
-    button{
-      background-color: green;
-    }
-  </style>
 </head>
 
 <body>
@@ -17,6 +12,7 @@
   <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
   <script src="./chatbot.js"></script>
+  <link rel="stylesheet"href="./style.css"></link>
 
   <script src="https://unpkg.com/supersimpledev/babel.js"></script>
   <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
@@ -57,18 +53,19 @@
         console.log(respose)
       }
       return (
-        < >
+        <div className="chat-input-container">
           <input
             placeholder="Send message to chat bot"
             size="25"
             onChange={saveInputText}
             value={inputText}
+            className="text-box"
             >
           </input>
           <button
             onClick={sendMessage}
           >Send</button>
-        </>
+        </div>
       );
     }
     function ChatMessage({ message, sender }) { //destructuring at parameter level
@@ -88,14 +85,17 @@
       //   )
       // }
       return (
-        <div>
-          {sender === 'robot' && <img src="./robot.png" width="30" />}
-          {message}
-          {sender === 'user' && <img src="./user.png" width="30" />}
+        <div className={sender=='user'?'chat-msg-user':'chat-msg-robot'}>
+          {sender === 'robot' && <img className="img" src="./robot.png" />}
+          <div className="chat-text-msg">
+            {message}
+            </div>
+          {sender === 'user' && <img className="img" src="./user.png" />}
         </div>
       );
     }
     function ChatMessages({chatMessages}){
+
 
       // const chatMessages=array[0];
       // const setChatMessages=array[1];
@@ -122,7 +122,7 @@
       // };
       
       return(
-        <>
+        <div className="chat-msgs-container">
           {chatMessages.map((chat)=>{
             return(
             <ChatMessage 
@@ -132,7 +132,7 @@
             />
         );
       })}
-      </>
+      </div>
       );
     }
     function App() {
@@ -154,15 +154,16 @@
         id:'id4'
       }]);
       return(
-        <>
+        <div className="app-container">
+
+        <ChatMessages
+          chatMessages={chatMessages}
+        />
         <ChatInput 
           chatMessages={chatMessages}
           setChatMessages={setChatMessages}
         />
-        <ChatMessages
-          chatMessages={chatMessages}
-        />
-        </>
+        </div>
       );
     }
     const container = document.querySelector('.js-container');
