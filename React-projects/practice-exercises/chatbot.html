@@ -51,7 +51,7 @@
       );
     }
     function ChatMessages(){
-      const chatMessages=[{
+      const array = React.useState([{
         message:'Hellooo Chatbot',
         sender:'user',
         id:'id1'
@@ -67,10 +67,32 @@
         message:'Hellooo Chatbot',
         sender:'robot',
         id:'id4'
-      }];
+      }]);
+
+      const chatMessages=array[0];
+      const setChatMessages=array[1];
+
       function sendMessage(){
-        console.log('Message sent to console')
-      }
+        // console.log('Message sent to console')
+        // chatMessages.push({
+        //   message:'test',
+        //   sender:'user',
+        //   id:crypto.randomUUID()
+        // });
+        setChatMessages(
+          [
+            ...chatMessages,
+            {// this is added at the end of current message
+              // if we just push its state won't change, hence it can't update UI
+              message:'test state',
+              sender:'user',
+              id:crypto.randomUUID()
+            }
+          ]
+        )
+        console.log(chatMessages)
+      };
+      
       return(
         <>
           <button onClick={sendMessage}>Send Message</button>
